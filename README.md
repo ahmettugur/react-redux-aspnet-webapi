@@ -21,5 +21,5 @@ React and Redux with Web Api
 
 # Prerequisites
   
-  -.NetFramework 4.7 (VS 2015/2017)
+  - .NetFramework 4.7 (VS 2015/2017)
   - node.js
