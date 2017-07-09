@@ -1,4 +1,4 @@
-React and Redux with Web Api
+Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 # Web Site
 - http://localhost:3000/web
