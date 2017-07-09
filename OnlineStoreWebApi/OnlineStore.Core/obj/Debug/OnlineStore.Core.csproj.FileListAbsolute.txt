@@ -1,0 +1,13 @@
+E:\GithubProject\OnlineStore\OnlineStore\OnlineStore.Core\bin\Debug\OnlineStore.Core.dll
+E:\GithubProject\OnlineStore\OnlineStore\OnlineStore.Core\bin\Debug\OnlineStore.Core.pdb
+E:\GithubProject\OnlineStore\OnlineStore\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll
+E:\GithubProject\OnlineStore\OnlineStore\OnlineStore.Core\obj\Debug\OnlineStore.Core.pdb
+E:\GithubProject\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.dll
+E:\GithubProject\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.pdb
+E:\GithubProject\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll
+E:\GithubProject\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.csprojResolveAssemblyReference.cache
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.pdb
