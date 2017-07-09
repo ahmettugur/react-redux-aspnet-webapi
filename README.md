@@ -1,3 +1,5 @@
+Single page basic Online Store app; React and Redux with ASP.NET Web Api.
+
 # Web Site
 - http://localhost:3000/web
 
@@ -17,3 +19,7 @@
   - bootpage
   - bootbox
 
+# Prerequisites
+  
+  - .NetFramework 4.7 (VS 2015/2017)
+  - node.js
