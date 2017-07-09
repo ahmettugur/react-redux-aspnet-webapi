@@ -24,7 +24,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: './',
     address: 'http://localhost',
-    port: 3400
+    port: 3000
   }
 };
 
