@@ -19,3 +19,7 @@ React and Redux with Web Api
   - bootpage
   - bootbox
 
+# Prerequisites
+  
+  -.NetFramework 4.7 (VS 2015/2017)
+  - node.js
