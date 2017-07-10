@@ -29,10 +29,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 Open command prompt
 
 ```sh
-
 cd OnlineStoreReact folder location
-
 npm install 
 npm start
-
 ```
