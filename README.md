@@ -23,3 +23,16 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
   
   - .NetFramework 4.7 (VS 2015/2017)
   - node.js
+
+# Installation 
+
+Open command prompt
+
+```sh
+
+cd OnlineStoreReact folder location
+
+npm install 
+npm start
+
+```
