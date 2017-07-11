@@ -5,7 +5,7 @@ CREATE DATABASE [Store]
 GO
 USE [Store]
 GO
-/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 11/07/2017 09:58:30 ******/
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 11/07/2017 10:06:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[__MigrationHistory](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 11/07/2017 09:58:30 ******/
+/****** Object:  Table [dbo].[Categories]    Script Date: 11/07/2017 10:06:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -43,7 +43,7 @@ CREATE TABLE [dbo].[Categories](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Products]    Script Date: 11/07/2017 09:58:30 ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 11/07/2017 10:06:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -62,7 +62,7 @@ CREATE TABLE [dbo].[Products](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 11/07/2017 09:58:30 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 11/07/2017 10:06:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -259,4 +259,11 @@ GO
 INSERT [dbo].[Products] ([Id], [CategoryId], [Name], [Details], [Price], [StockQuantity]) VALUES (77, 2, N'Original Frankfurter grüne Soße', N'Original Frankfurter grüne Soße', CAST(13.00 AS Decimal(18, 2)), 32)
 GO
 SET IDENTITY_INSERT [dbo].[Products] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON 
+
+GO
+INSERT [dbo].[Users] ([UserId], [FullName], [Password], [Email], [Role]) VALUES (1, N'Admin', N'123456', N'admin@admin.com', N'Admin')
+GO
+SET IDENTITY_INSERT [dbo].[Users] OFF
 GO
