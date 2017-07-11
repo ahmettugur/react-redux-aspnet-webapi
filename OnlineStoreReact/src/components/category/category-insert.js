@@ -74,13 +74,6 @@ export class CategoryInsertForm extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    //console.log(state.adminProducts);
-    return {
-        initialValues: state.categories.category
-    }
-}
-
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         addCategory: addCategory,
@@ -88,7 +81,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
+export default connect(null, mapDispatchToProps)(reduxForm({
     form: 'CategoryInsertForm',
     validate
 })(CategoryInsertForm));
