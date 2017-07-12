@@ -24,6 +24,12 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
   - .NetFramework 4.7 (VS 2015/2017)
   - node.js
 
+### Database
+```sh
+Open SQL Server Management Studio > File > Open > File  select Store.sql and execute
+Change OnlineStore.Api > Web.config file connection string Data Source your server name
+```
+
 ### Installation Node Module
 
 Open command prompt
