@@ -13,7 +13,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 # React Component
   - redux-from
-  - metarial UI
+  - material UI
   - axios
   - react-router
   - bootpage
