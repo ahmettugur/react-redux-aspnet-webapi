@@ -1,7 +1,7 @@
 import axios from "axios"
 import getCart from "../components/cart/cart-store"
 
-const API_URL = 'http://localhost:61771';
+const API_URL = 'http://localhost:65032';
 const PRODUCT_LIST_URL = "/api/products";
 const PRODUCT_DETAIL_URL = "/api/products/detail"
 const PRODUCT_ADMIN_LIST_URL = "/api/admin/products";
