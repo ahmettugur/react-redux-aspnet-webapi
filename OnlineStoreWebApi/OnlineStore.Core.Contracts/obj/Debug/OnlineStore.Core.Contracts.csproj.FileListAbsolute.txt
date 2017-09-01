@@ -1,0 +1,17 @@
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.dll
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.pdb
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csproj.CoreCompileInputs.cache
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.dll
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.pdb
+E:\Applicatiions\Framework\Framework_2\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csprojResolveAssemblyReference.cache
+E:\Applicatiions\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.dll
+E:\Applicatiions\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.pdb
+E:\Applicatiions\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csproj.CoreCompileInputs.cache
+E:\Applicatiions\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.dll
+E:\Applicatiions\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csprojResolveAssemblyReference.cache
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csproj.CoreCompileInputs.cache
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.pdb
