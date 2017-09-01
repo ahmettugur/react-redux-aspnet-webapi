@@ -7,9 +7,18 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - http://localhost:3000/admin
 
 # Web API
-- Generic Repostory and Unit of Work Pattern
+- Generic Repostory Pattern
+- Aspect Oriented Programming with Postsharp
+  - AuthorizationAspects
+  - CacheAsepcts
+  - ExceptionAspects
+  - LogAspects
+  - ValidationAspects
+- FluentValidation
+- log4net with logging
 - Bearer Token Authentication
-- Castle Windsor IOC
+- Ninject IOC
+- AutoMapper
 
 # React Component
   - redux-from
@@ -22,12 +31,13 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 # Prerequisites
   
   - .NetFramework 4.7 (VS 2015/2017)
-  - node.js
+  - node.js 8 >
 
 ### Database
 ```sh
 Open SQL Server Management Studio > File > Open > File  select Store.sql and execute
-Change OnlineStore.Api > Web.config file connection string Data Source your server name
+Change OnlineStore.WebApi > Web.config file connection string Data Source your server name
+Change OnlineStore.WebApi > log4net.config file connection string Data Source your server name
 ```
 
 ### Installation Node Module
