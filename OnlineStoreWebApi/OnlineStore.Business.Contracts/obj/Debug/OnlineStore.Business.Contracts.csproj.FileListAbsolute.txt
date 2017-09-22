@@ -28,3 +28,13 @@ E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\Onl
 E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.csproj.CoreCompileInputs.cache
 E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.dll
 E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Business.Contracts.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Business.Contracts.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Entity.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Core.Contracts.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Entity.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\bin\Debug\OnlineStore.Core.Contracts.pdb
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.csprojResolveAssemblyReference.cache
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.csproj.CoreCompileInputs.cache
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.dll
+E:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business.Contracts\obj\Debug\OnlineStore.Business.Contracts.pdb

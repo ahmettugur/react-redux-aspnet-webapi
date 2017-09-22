@@ -1,13 +1,19 @@
 ﻿using Newtonsoft.Json;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using OnlineStore.Business.Contracts;
 using OnlineStore.Core.CrossCuttingConcerns.Security;
+using OnlineStore.Entity.ComplexType;
 using OnlineStore.Entity.Concrete;
 using OnlineStore.WebApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http;
 
@@ -185,6 +191,84 @@ namespace OnlineStore.WebApi.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+        [Route("api/admin/product/download")]
+        [HttpGet]
+        public HttpResponseMessage Download()
+        {
+            MediaTypeHeaderValue mediaType =
+                   MediaTypeHeaderValue.Parse("application/octet-stream");
+            string fileName = "Product List - " + DateTime.Now.ToShortDateString() + ".xlsx";
+            byte[] excelFile = ExcelSheet(fileName, _productService.GetAllProductWithCategory());
+
+            MemoryStream memoryStream = new MemoryStream(excelFile);
+            HttpResponseMessage response =
+                response = Request.CreateResponse(HttpStatusCode.OK);
+            response.Content = new StreamContent(memoryStream);
+            response.Content.Headers.ContentType = mediaType;
+            response.Content.Headers.ContentDisposition =
+                new ContentDispositionHeaderValue("fileName") { FileName = fileName };
+            return response;
+        }
+
+        public byte[] ExcelSheet(string fileName,List<ProductWithCategory> productList)
+        {
+            using (var package = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(fileName.Replace(".xlsx", string.Empty));
+                worksheet.Row(1).Height = 30;
+                worksheet.Row(1).Style.VerticalAlignment = ExcelVerticalAlignment.Center;
+                worksheet.Row(1).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+
+                worksheet.Cells[1, 1].Value = "Product Id";
+                //worksheet.Cells[1, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[1, 1].AutoFitColumns();
+
+
+                worksheet.Cells[1, 2].Value = "Product Name";
+                //worksheet.Cells[1, 2].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[1, 2].AutoFitColumns();
+
+                worksheet.Cells[1, 3].Value = "Category";
+                //worksheet.Cells[1, 3].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[1, 3].AutoFitColumns();
+
+                worksheet.Cells[1, 4].Value = "Price";
+                //worksheet.Cells[1, 4].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[1, 4].AutoFitColumns();
+
+                worksheet.Cells[1, 5].Value = "Stock Quantity";
+                //worksheet.Cells[1, 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                worksheet.Cells[1, 5].AutoFitColumns();
+
+                for (int i = 1; i <= 5; i++)
+                {
+                    worksheet.Cells[1, i].Style.Font.Bold = true;
+                    worksheet.Cells[1, i].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    worksheet.Cells[1, i].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#448AFF"));
+                    worksheet.Cells[1, i].Style.Font.Color.SetColor(Color.White);
+                }
+
+                for (int k = 0; k < productList.Count; k++)
+                {
+                    worksheet.Cells[k + 2, 1].Value = productList[k].ProductId;
+                    worksheet.Cells[k + 2, 2].Value = productList[k].Name;
+                    worksheet.Cells[k + 2, 3].Value = productList[k].CategoryName;
+                    worksheet.Cells[k + 2, 4].Value = productList[k].Price;
+                    worksheet.Cells[k + 2, 5].Value = productList[k].StockQuantity;
+                    if (productList[k].StockQuantity <= 10)
+                    {
+                        worksheet.Cells[k + 2, 5].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                        worksheet.Cells[k + 2, 5].Style.Fill.BackgroundColor.SetColor(ColorTranslator.FromHtml("#D50000"));
+                        worksheet.Cells[k + 2, 5].Style.Font.Color.SetColor(Color.White);
+                    }
+
+                }
+                byte[] bytes = package.GetAsByteArray();
+                return bytes;
+            }
+        }
+
 
     }
 }

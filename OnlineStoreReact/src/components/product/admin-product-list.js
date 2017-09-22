@@ -79,9 +79,16 @@ class AdminProductList extends Component {
                 <div>Loading...</div>
             )
         }
-
+        const marginright = {
+            margin: "0 0 0 10px"
+        }
         return (
             <div className="col-md-12 col-sm-12">
+			
+                <a style={marginright} href="http://localhost:65032/api/admin/product/download" target="_blank" className="btn btn-sm btn-success pull-right">
+                    <i className="glyphicon glyphicon-download-alt"></i>
+                    Excel Download
+                </a>			
                 <Link to="/admin/product/productform" className="btn btn-sm btn-primary pull-right">
                     <i className="glyphicon glyphicon-plus"></i>
                     Add New Product </Link>
