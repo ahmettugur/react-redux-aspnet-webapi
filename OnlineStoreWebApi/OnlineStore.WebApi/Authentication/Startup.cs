@@ -28,16 +28,15 @@ namespace OnlineStore.WebApi.Authentication
         {
             OAuthAuthorizationServerOptions oAuthAuthorizationServerOptions = new OAuthAuthorizationServerOptions()
             {
-                TokenEndpointPath = new Microsoft.Owin.PathString("/token"), // token adresi
-                AccessTokenExpireTimeSpan = TimeSpan.FromHours(10),//10 Saat geçerli
+                TokenEndpointPath = new Microsoft.Owin.PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromHours(10),
                 AllowInsecureHttp = true,
                 Provider = new AuthorizationServerProvider()
-                // Burada hata alırsanızz saglayıcı klasınızız doğru ayarladığınızdan emin olun.
             };
 
 
-            app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions); // Ayarladığımız config dosyasının server'a kullanması için gönderiyoruz.
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());// Bearer Authentication'ı kullanacağımızı belirttik.
+            app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions);
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
         }
     }
 
