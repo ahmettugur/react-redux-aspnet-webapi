@@ -1,0 +1,66 @@
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import { fetchAdminProducts, deleteProduct } from "../../actions/index"
+import { fetchAdminProducts, deleteProduct, PRODUCT_EXCEL_DOWNLOAD_URL } from "../../actions/index"
 import { Link } from "react-router-dom";
 
 import Paging from "../paging"
@@ -25,6 +25,26 @@ class AdminProductList extends Component {
             .toFixed(2) // always two decimal digits
             .replace(",", ".") // replace decimal point character with ,
             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") //+ " €" // use . as a separator
+    }
+    downloadExcel() {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            var a, today;
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
+                a = document.createElement('a');
+                a.href = window.URL.createObjectURL(xhttp.response);
+                today = new Date();
+                a.download = "Products_" + today.toDateString().split(" ").join("_") + ".xlsx";
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                return a.click();
+            }
+        };
+        xhttp.open("GET", PRODUCT_EXCEL_DOWNLOAD_URL, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.responseType = 'blob';
+        xhttp.send();
     }
     deleteProduct(id) {
         if (id != 0 && id != undefined) {
@@ -84,11 +104,10 @@ class AdminProductList extends Component {
         }
         return (
             <div className="col-md-12 col-sm-12">
-			
-                <a style={marginright} href="http://localhost:65032/api/admin/product/download" target="_blank" className="btn btn-sm btn-success pull-right">
+                <a style={marginright} href="javascript:void(0)" target="_blank" onClick={this.downloadExcel} className="btn btn-sm btn-success pull-right">
                     <i className="glyphicon glyphicon-download-alt"></i>
                     Excel Download
-                </a>			
+                </a>
                 <Link to="/admin/product/productform" className="btn btn-sm btn-primary pull-right">
                     <i className="glyphicon glyphicon-plus"></i>
                     Add New Product </Link>

@@ -8,7 +8,7 @@ const PRODUCT_ADMIN_LIST_URL = "/api/admin/products";
 const ACCES_TOKEN_URL = "/token";
 const PRODUCT_CRUD_URL = "/api/admin/product";
 const CATEGORY_CRUD_URL = "/api/category";
-
+export const PRODUCT_EXCEL_DOWNLOAD_URL = API_URL + "/api/admin/product/download"
 
 export const FETCH_CATEGORY_LIST = 'FETCH_CATEGORY_LIST';
 export const CATEGORY_DETAIL = 'CATEGORY_DETAIL';
