@@ -9,12 +9,14 @@ export default function (state = INITIAL_STATE, action) {
                 ...state, products: action.payload.data.Products,
                 PageSize: action.payload.data.PageSize,
                 PageCount: action.payload.data.PageCount,
+				product: null
             }
         case FETCH_ADMIN_PRODUCT_LIST:
             return {
                 ...state, products: action.payload.data.Products,
                 PageCount: action.payload.data.PageCount,
-                PageSize: action.payload.data.PageSize
+                PageSize: action.payload.data.PageSize,
+				product: null
             }
         case PRODUCT_DETAIL:
             return { ...state, product: action.payload.data }
