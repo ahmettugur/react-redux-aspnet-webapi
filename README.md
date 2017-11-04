@@ -1,7 +1,7 @@
 Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 # Web Site
-- http://localhost:3000/web
+- http&#58;//localhost:3000/web
 
 # Admin Panel
 - http://localhost:3000/admin
