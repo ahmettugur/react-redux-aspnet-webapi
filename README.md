@@ -4,7 +4,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - http&#58;//localhost:3000/web
 
 # Admin Panel
-- http://localhost:3000/admin
+- http&#58;//localhost:3000/admin
 
 # Web API
 - Generic Repostory Pattern
