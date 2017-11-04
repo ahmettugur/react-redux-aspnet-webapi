@@ -1,11 +1,5 @@
 Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
-# Web Site
-- http&#58;//localhost:3000/web
-
-# Admin Panel
-- http&#58;//localhost:3000/admin
-
 # Web API
 - Generic Repostory Pattern
 - Aspect Oriented Programming with Postsharp (4.2.17)
