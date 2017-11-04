@@ -19,6 +19,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - Bearer Token Authentication
 - Ninject IOC
 - AutoMapper
+- EPPlus Excel Download
 
 # React Component
   - redux-from
