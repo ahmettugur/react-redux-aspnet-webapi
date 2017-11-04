@@ -46,3 +46,8 @@ cd OnlineStoreReact folder location
 npm install 
 npm start
 ```
+### Web Site
+- http&#58;//localhost:3000/web
+
+### Admin Panel
+- http&#58;//localhost:3000/admin
