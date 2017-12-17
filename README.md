@@ -20,9 +20,10 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
   - material UI
   - axios
   - react-router
-  - bootpage
+  - react-block-ui
+  - react-pager
   - bootbox
-
+  
 # Prerequisites
   
   - .NetFramework 4.7 (VS 2015/2017)
