@@ -5,6 +5,12 @@ import { fetchProducts, addToCart } from "../../actions/index"
 import Paging from "../paging"
 // import Cart from "./cart"
 
+import $ from 'jquery';
+import 'bootstrap/dist/css/bootstrap.css';
+import bootbox from "bootbox"
+window.jQuery = $;
+require('bootstrap');
+
 class ProductList extends Component {
 
     componentWillMount() {
@@ -14,10 +20,13 @@ class ProductList extends Component {
         // this.props.addToCart(1);
     }
     currencyFormat(num) {
-        return "$" + num
-            .toFixed(2) // always two decimal digits
-            .replace(",", ".") // replace decimal point character with ,
-            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") //+ " €" // use . as a separator
+        if (num !== "") {
+            num = parseFloat(num)
+            return "$" + num
+                .toFixed(2) // always two decimal digits
+                .replace(",", ".") // replace decimal point character with ,
+                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") //+ " €" // use . as a separator
+        }
     }
     componentWillReceiveProps(nextProps) {
 
@@ -64,7 +73,7 @@ class ProductList extends Component {
         })
     }
     render() {
-        if (this.props.productList.length == 0) {
+        if (this.props.productList.length === 0) {
             return (
                 <div>Loading...</div>
             )

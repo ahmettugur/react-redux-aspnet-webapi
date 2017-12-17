@@ -4,19 +4,19 @@ import getCart from "../components/cart/cart-store"
 const API_URL = 'http://localhost:65032';
 const PRODUCT_LIST_URL = "/api/products";
 const PRODUCT_DETAIL_URL = "/api/products/detail"
-const PRODUCT_ADMIN_LIST_URL = "/api/admin/products";
 const ACCES_TOKEN_URL = "/token";
-const PRODUCT_CRUD_URL = "/api/admin/product";
-const CATEGORY_CRUD_URL = "/api/category";
-export const PRODUCT_EXCEL_DOWNLOAD_URL = API_URL + "/api/admin/product/download"
+const PRODUCT_CRUD_URL = "/api/admin/products";
+const CATEGORY_CRUD_URL = "/api/categories";
+export const PRODUCT_EXCEL_DOWNLOAD_URL = API_URL + "/api/admin/products/download"
 
+
+export const FETCH_CART = "FETCH_CART";
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const FETCH_PRODUCT_LIST = 'FETCH_PRODUCT_LIST';
+export const FETCH_ADMIN_PRODUCT_LIST = "FETCH_ADMIN_PRODUCT_LIST";
+export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
 export const FETCH_CATEGORY_LIST = 'FETCH_CATEGORY_LIST';
 export const CATEGORY_DETAIL = 'CATEGORY_DETAIL';
-export const FETCH_PRODUCT_LIST = "FETCH_PRODUCT_LIST";
-export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
-export const ADD_TO_CART = "ADD_TO_CART";
-export const FETCH_CART = "FETCH_CART";
-export const FETCH_ADMIN_PRODUCT_LIST = "FETCH_ADMIN_PRODUCT_LIST";
 export const ACCES_TOKEN = 'ACCES_TOKEN';
 
 export const PRODUCT_CREATE = "PRODUCT_CREATE";
@@ -55,8 +55,6 @@ export function addCategory(props) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -75,8 +73,6 @@ export function updateCategory(props) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -95,8 +91,6 @@ export function deleteCategory(id) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -122,28 +116,10 @@ export function fetchAdminProducts(page) {
     if (accessToken != null) {
         token = JSON.parse(accessToken);
     }
-    var data = { Products: [], PageSize: 0, PageCount: 0 }
-
-    var request = axios.get(API_URL + PRODUCT_ADMIN_LIST_URL + "/" + page, {
+    var request = axios.get(API_URL + PRODUCT_CRUD_URL + "/" + page, {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-        console.log('Sorry, something is wrong: ' + error);
-        if (error.response) {
-            // console.log(error.response.data.error_description);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
-
-            // tokenData.accessToken = '';
-            // tokenData.message = response.data.error_description
-
-        } else {
-            console.log('Error', error.message);
-            tokenData.accessToken = '';
-            tokenData.message = error.message
-        }
-        console.log(error.config);
     });
     return {
         type: FETCH_ADMIN_PRODUCT_LIST,
@@ -162,8 +138,6 @@ export function addproduct(props) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -182,8 +156,6 @@ export function updateProduct(props) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -202,8 +174,6 @@ export function deleteProduct(id) {
         'headers': {
             "Authorization": "Bearer " + token.accessToken
         }
-    }).catch((error) => {
-
     });
 
     return {
@@ -219,7 +189,6 @@ export function productDetail(productId) {
         payload: request
     }
 }
-///Product Action END
 
 export function login(props) {
     var accessToken = localStorage.getItem('accessToken');
@@ -248,21 +217,8 @@ export function login(props) {
         type: ACCES_TOKEN,
         payload: request
     }
-
-    // var hours = 24; // Reset when storage is more than 24hours
-    // var now = new Date().getTime();
-    // var setupTime = localStorage.getItem('setupTime');
-    // if (setupTime == null) {
-    //     1
-    //     localStorage.setItem('setupTime', now)
-    // } else {
-    //     if (now - setupTime > hours * 60 * 60 * 1000) {
-    //         localStorage.clear()
-    //         localStorage.setItem('setupTime', now);
-    //     }
-    // }
-
 }
+
 
 export function addToCart(productId) {
     const request = axios.get(API_URL + PRODUCT_DETAIL_URL + "/" + productId)
