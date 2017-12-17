@@ -81,12 +81,9 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Ent
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\System.Web.Http.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\Dapper.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\Newtonsoft.Json.dll
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\System.Net.Http.Formatting.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\OnlineStore.Core.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\OnlineStore.Core.dll.config
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\Dapper.Contrib.xml
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\System.Web.Mvc.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\Ninject.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\EntityFramework.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Entity\bin\Debug\FluentValidation.xml

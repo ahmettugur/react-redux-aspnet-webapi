@@ -220,7 +220,6 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Dat
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\PostSharp.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Web.Http.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Newtonsoft.Json.dll
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Net.Http.Formatting.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.dll.config
@@ -230,7 +229,6 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Dat
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Dapper.Contrib.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\EntityFramework.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Web.Mvc.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Ninject.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\FluentValidation.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\log4net.xml

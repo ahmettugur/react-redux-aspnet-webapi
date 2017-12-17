@@ -277,7 +277,6 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Bus
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\System.Web.Http.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Dapper.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Newtonsoft.Json.dll
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\System.Net.Http.Formatting.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\OnlineStore.Business.Contracts.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\OnlineStore.Core.pdb
@@ -292,7 +291,6 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Bus
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\FluentValidation.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Ninject.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\PostSharp.xml
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\System.Web.Mvc.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Dapper.Contrib.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\log4net.xml
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Dapper.xml

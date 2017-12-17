@@ -34,7 +34,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\bin\Debug\OnlineStore.Core.Contracts.pdb
-D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csprojResolveAssemblyReference.cache
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.csproj.CoreCompileInputs.cache
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core.Contracts\obj\Debug\OnlineStore.Core.Contracts.pdb

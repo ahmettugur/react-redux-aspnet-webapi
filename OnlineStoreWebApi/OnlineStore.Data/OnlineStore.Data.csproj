@@ -58,9 +58,9 @@
     <Compile Include="Dapper\DapperCategoryRepository.cs" />
     <Compile Include="Dapper\DapperProductRepository.cs" />
     <Compile Include="Dapper\DapperUserRepository.cs" />
-    <Compile Include="EntityFramework\Concrete\CategoryRepository.cs" />
-    <Compile Include="EntityFramework\Concrete\ProductRepository.cs" />
-    <Compile Include="EntityFramework\Concrete\UserRepository.cs" />
+    <Compile Include="EntityFramework\Concrete\EFCategoryRepository.cs" />
+    <Compile Include="EntityFramework\Concrete\EFProductRepository.cs" />
+    <Compile Include="EntityFramework\Concrete\EFUserRepository.cs" />
     <Compile Include="EntityFramework\Mappings\CategoryMap.cs" />
     <Compile Include="EntityFramework\Mappings\ProductMap.cs" />
     <Compile Include="EntityFramework\Mappings\RoleMap.cs" />

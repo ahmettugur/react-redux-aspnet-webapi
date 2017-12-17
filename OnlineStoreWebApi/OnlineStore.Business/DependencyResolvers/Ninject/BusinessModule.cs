@@ -24,9 +24,9 @@ namespace OnlineStore.Business.DependencyResolvers.Ninject
             Bind<IUserService>().To<UserService>();
 
             ///Repositories
-            //Bind<IProductRepository>().To<ProductRepository>();
-            //Bind<ICategoryRepository>().To<CategoryRepository>();
-            //Bind<IUserRespository>().To<UserRepository>().InSingletonScope();
+            //Bind<IProductRepository>().To<EFProductRepository>();
+            //Bind<ICategoryRepository>().To<EFCategoryRepository>();
+            //Bind<IUserRespository>().To<EFUserRepository>().InSingletonScope();
 
             Bind<IProductRepository>().To<DapperProductRepository>();
             Bind<ICategoryRepository>().To<DapperCategoryRepository>();
