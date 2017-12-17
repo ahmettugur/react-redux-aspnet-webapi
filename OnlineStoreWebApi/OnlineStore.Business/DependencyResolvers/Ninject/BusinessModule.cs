@@ -2,6 +2,7 @@
 using OnlineStore.Business.Contracts;
 using OnlineStore.Business.Services;
 using OnlineStore.Data.Contracts;
+using OnlineStore.Data.Dapper;
 using OnlineStore.Data.EntityFramework;
 using OnlineStore.Data.EntityFramework.Concrete;
 using System;
@@ -23,9 +24,13 @@ namespace OnlineStore.Business.DependencyResolvers.Ninject
             Bind<IUserService>().To<UserService>();
 
             ///Repositories
-            Bind<IProductRepository>().To<ProductRepository>();
-            Bind<ICategoryRepository>().To<CategoryRepository>();
-            Bind<IUserRespository>().To<UserRepository>().InSingletonScope();
+            //Bind<IProductRepository>().To<ProductRepository>();
+            //Bind<ICategoryRepository>().To<CategoryRepository>();
+            //Bind<IUserRespository>().To<UserRepository>().InSingletonScope();
+
+            Bind<IProductRepository>().To<DapperProductRepository>();
+            Bind<ICategoryRepository>().To<DapperCategoryRepository>();
+            Bind<IUserRespository>().To<DapperUserRepository>().InSingletonScope();
 
             ///Context
             Bind<DbContext>().To<OnlineStoreContext>();

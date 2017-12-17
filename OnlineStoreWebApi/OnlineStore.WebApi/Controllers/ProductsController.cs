@@ -61,8 +61,9 @@ namespace OnlineStore.WebApi.Controllers
 
         [Route("api/products/{categoryId?}/{page?}")]
         [HttpGet]
-        public HttpResponseMessage ProductList(int categoryId = 0, int page = 1)
+        public IHttpActionResult ProductList(int categoryId = 0, int page = 1)
         {
+            //return BadRequest("Hata Oluştu.");
             int pageSize = 12;
             var products = (categoryId == 0 ? _productService.GetAll() : _productService.GetAll(_ => _.CategoryId == categoryId)).OrderByDescending(_ => _.Id).ToList();
 
@@ -75,44 +76,35 @@ namespace OnlineStore.WebApi.Controllers
                 CurrentPage = page
 
             };
-            return Request.CreateResponse(HttpStatusCode.OK, productResponse);
+            return Ok(productResponse);
         }
 
         [Route("api/products/detail/{productId?}")]
         [HttpGet]
-        public HttpResponseMessage ProductDetail(int productId)
+        public IHttpActionResult ProductDetail(int productId)
         {
-            try
+            if (productId == 0)
             {
-                if (productId == 0)
+                return BadRequest("ProductId can not be zero. ProductId: " + productId);
+            }
+            else
+            {
+                var product = _productService.Get(_ => _.Id == productId);
+                if (product == null)
                 {
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ProductId can not be zero. ProductId: " + productId);
+                    return BadRequest("Product not found. ProductId: " + productId);
                 }
                 else
                 {
-                    var product = _productService.Get(_ => _.Id == productId);
-                    if (product == null)
-                    {
-                        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Product not found. ProductId: " + productId);
-                    }
-                    else
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, product);
-                    }
+                    return Ok(product);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
 
         [Route("api/admin/products/{page?}")]
         [HttpGet]
-        public HttpResponseMessage ProductComplexList(int page = 1)
+        public IHttpActionResult ProductComplexList(int page = 1)
         {
-
             int pageSize = 10;
             var productComplex = _productService.GetAllProductWithCategory().OrderByDescending(_ => _.ProductId).ToList();
 
@@ -124,75 +116,54 @@ namespace OnlineStore.WebApi.Controllers
 
             };
 
-            return Request.CreateResponse(HttpStatusCode.OK, ProductComplexResponse);
+            return Ok(ProductComplexResponse);
         }
 
-        [Route("api/admin/product")]
+        [Route("api/admin/products")]
         [HttpPost]
-        public HttpResponseMessage Post([FromBody]Product product)
+        public IHttpActionResult Post([FromBody]Product product)
         {
-            try
-            {
-                _productService.Add(product);
+            _productService.Add(product);
+            var uri = new Uri(Request.RequestUri + "/" + product.Id);
+            return Created(uri, product);
 
-                return Request.CreateResponse(HttpStatusCode.Created, product);
-
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
-            }
         }
 
-        [Route("api/admin/product")]
+        [Route("api/admin/products")]
         [HttpPut]
-        public HttpResponseMessage Put([FromBody]Product product)
+        public IHttpActionResult Put([FromBody]Product product)
         {
-            try
+            if (product.Id == 0)
             {
-                if (product.Id == 0)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ProductId can not be zero. ProductId: " + product.Id);
-                }
-                else
-                {
-                    _productService.Update(product);
-                    return Request.CreateResponse(HttpStatusCode.OK, product);
-                }
-
+                return BadRequest("ProductId can not be zero. ProductId: " + product.Id);
             }
-            catch (Exception ex)
+            else
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                _productService.Update(product);
+
+                return StatusCode(HttpStatusCode.NoContent);
             }
         }
 
-        [Route("api/admin/product/{id}")]
+        [Route("api/admin/products/{id}")]
         [HttpDelete]
-        public HttpResponseMessage Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            try
+            if (id == 0)
             {
-                if (id == 0)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "ProductId can not be zero. ProductId: " + id);
-                }
-                else
-                {
-                    Product product = new Product { Id = id };
-                    _productService.Delete(product);
-
-                    return Request.CreateResponse(HttpStatusCode.OK, "Your product was deletd succesfully.");
-
-                }
+                return BadRequest("ProductId can not be zero. ProductId: " + id);
             }
-            catch (Exception ex)
+            else
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                Product product = new Product { Id = id };
+                _productService.Delete(product);
+
+                return StatusCode(HttpStatusCode.NoContent);
+
             }
         }
 
-        [Route("api/admin/product/download")]
+        [Route("api/admin/products/download")]
         [HttpGet]
         public HttpResponseMessage Download()
         {
@@ -211,7 +182,7 @@ namespace OnlineStore.WebApi.Controllers
             return response;
         }
 
-        public byte[] ExcelSheet(string fileName,List<ProductWithCategory> productList)
+        public byte[] ExcelSheet(string fileName, List<ProductWithCategory> productList)
         {
             using (var package = new ExcelPackage())
             {

@@ -1,0 +1,95 @@
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 0,
+          "Name": "",
+          "Description": ""
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "ClassName": "FluentValidation.ValidationException",
+    "Message": "Validation failed: \r\n -- Category Name can not be empty.\r\n -- Description cannot be empty.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at OnlineStore.Core.CrossCuttingConcerns.Validation.FluentValidation.ValidatorTool.FluentValidate(IValidator validator, Object entity) in E:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Validation\\FluentValidation\\ValidatorTool.cs:line 18\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.ValidationAspects.FluentValidationAspect.OnEntry(MethodExecutionArgs args) in E:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\ValidationAspects\\FluentValidationAspect.cs:line 30\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in E:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nFluentValidate\nOnlineStore.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nOnlineStore.Core.CrossCuttingConcerns.Validation.FluentValidation.ValidatorTool\nVoid FluentValidate(FluentValidation.IValidator, System.Object)",
+    "HResult": -2146233088,
+    "Source": "OnlineStore.Core",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 0,
+          "Name": "sdas",
+          "Description": "asdasdas"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}

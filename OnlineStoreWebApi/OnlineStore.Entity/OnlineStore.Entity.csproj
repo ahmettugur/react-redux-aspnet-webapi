@@ -30,7 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper.Contrib, Version=1.50.4.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +56,10 @@
     <ProjectReference Include="..\OnlineStore.Core.Contracts\OnlineStore.Core.Contracts.csproj">
       <Project>{8F128C8E-BEA5-4EFA-8813-69C9F3F52270}</Project>
       <Name>OnlineStore.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Core\OnlineStore.Core.csproj">
+      <Project>{a16a335f-b308-4608-92f8-eb5a13d83685}</Project>
+      <Name>OnlineStore.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

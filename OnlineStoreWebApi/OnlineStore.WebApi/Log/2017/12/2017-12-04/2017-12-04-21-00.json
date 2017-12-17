@@ -1,0 +1,337 @@
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "NodeType": 6,
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "Method": {
+              "Name": "Contains",
+              "AssemblyName": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "ClassName": "System.String",
+              "Signature": "Boolean Contains(System.String)",
+              "Signature2": "System.Boolean Contains(System.String)",
+              "MemberType": 8,
+              "GenericArguments": null
+            },
+            "Object": {
+              "Type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Name",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Category",
+                "Signature": "System.String Name",
+                "Signature2": "System.String Name",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Arguments": [
+              {
+                "Type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "NodeType": 9,
+                "Value": "Be",
+                "CanReduce": false
+              }
+            ],
+            "CanReduce": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "NodeType": 9,
+              "Value": 1,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Id",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Category",
+                "Signature": "Int32 Id",
+                "Signature2": "System.Int32 Id",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "NodeType": 9,
+              "Value": 1,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Id",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Category",
+                "Signature": "Int32 Id",
+                "Signature2": "System.Int32 Id",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "NodeType": 9,
+              "Value": 1,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Id",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Category",
+                "Signature": "Int32 Id",
+                "Signature2": "System.Int32 Id",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-FDQK07P\\DEVELOPER",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "NodeType": 9,
+              "Value": 1,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Id",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Category",
+                "Signature": "Int32 Id",
+                "Signature2": "System.Int32 Id",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Category, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}

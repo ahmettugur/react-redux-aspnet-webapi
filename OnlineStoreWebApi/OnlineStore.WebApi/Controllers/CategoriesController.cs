@@ -17,57 +17,50 @@ namespace OnlineStore.WebApi.Controllers
             _categoryService = categoryService;
         }
 
-        [Route("api/category")]
+        [Route("api/categories")]
         [HttpGet]
         public IHttpActionResult CategoryList()
         {
-            return Ok(_categoryService.GetAll().OrderByDescending(_ => _.Id));
+            return Ok(_categoryService.GetAll());
         }
 
-        [Route("api/category/{id}")]
+        [Route("api/categories/{id}")]
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var category = _categoryService.Get(_=>_.Id == id);
+            var category = _categoryService.Get(_ => _.Id == id);
 
             return Ok(category);
         }
 
 
-        [Route("api/category")]
+        [Route("api/categories")]
         [HttpPost]
         public IHttpActionResult Post([FromBody] Category category)
         {
             _categoryService.Add(category);
-
-            return Ok(category);
+            var uri = new Uri(Request.RequestUri + "/" + category.Id);
+            return Created(uri, category);
         }
 
-        [Route("api/category")]
+        [Route("api/categories")]
         [HttpPut]
         public IHttpActionResult Put([FromBody] Category category)
         {
             _categoryService.Update(category);
-
-            return Ok(category);
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
 
-        [Route("api/category/{id}")]
+        [Route("api/categories/{id}")]
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            try
-            {
-                var category = new Category { Id = id };
-                _categoryService.Delete(category);
+            var category = new Category { Id = id };
+            _categoryService.Delete(category);
 
-                return StatusCode(HttpStatusCode.NoContent);
-            }
-            catch
-            {
-                return InternalServerError();
-            }
+            return StatusCode(HttpStatusCode.NoContent);
+
         }
     }
 }

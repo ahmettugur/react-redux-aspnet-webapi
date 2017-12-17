@@ -1,0 +1,244 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.Security.SecurityException",
+    "Message": "You are not authorized.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects.AuthorizationAspect.OnEntry(MethodExecutionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\AuthorizationAspects\\AuthorizationAspect.cs:line 38\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnEntry\nOnlineStore.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nOnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects.AuthorizationAspect\nVoid OnEntry(PostSharp.Aspects.MethodExecutionArgs)",
+    "HResult": -2146233078,
+    "Source": "OnlineStore.Core",
+    "WatsonBuckets": null,
+    "Action": 0,
+    "FirstPermissionThatFailed": null,
+    "Demanded": null,
+    "GrantedSet": null,
+    "RefusedSet": null,
+    "Denied": null,
+    "PermitOnly": null,
+    "Assembly": null,
+    "Method": null,
+    "Method_String": null,
+    "Zone": 0,
+    "Url": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException",
+    "Message": "The name 'GetType' is bound to a method and cannot be used like a property",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at OnlineStore.Core.Repository.Dapper.GenerateDynamicQuery.GenerateInsertQuery(String tableName, Object item) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\GenerateDynamicQuery.cs:line 18\r\n   at OnlineStore.Core.Repository.Dapper.DapperGenericRepository`1.Add(TEntity entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\DapperGenericRepository.cs:line 46\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": null,
+    "HResult": -2146233088,
+    "Source": "Anonymously Hosted DynamicMethods Assembly",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException",
+    "Message": "The name 'GetType' is bound to a method and cannot be used like a property",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at CallSite.Target(Closure , CallSite , Object )\r\n   at OnlineStore.Core.Repository.Dapper.GenerateDynamicQuery.GenerateInsertQuery(String tableName, Object item) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\GenerateDynamicQuery.cs:line 18\r\n   at OnlineStore.Core.Repository.Dapper.DapperGenericRepository`1.Add(TEntity entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\DapperGenericRepository.cs:line 46\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": null,
+    "HResult": -2146233088,
+    "Source": "Anonymously Hosted DynamicMethods Assembly",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "Errors": [
+      {
+        "Source": ".Net SqlClient Data Provider",
+        "Number": 208,
+        "State": 1,
+        "Class": 16,
+        "Server": "DESKTOP-MR3PA3D\\SQLEXPRESS",
+        "Message": "Invalid object name 'Categorys'.",
+        "Procedure": "",
+        "LineNumber": 1
+      }
+    ],
+    "ClientConnectionId": "469a6d9b-79e8-4127-b44a-b3eb8ee2d8b2",
+    "ClassName": "System.Data.SqlClient.SqlException",
+    "Message": "Invalid object name 'Categorys'.",
+    "Data": {
+      "HelpLink.ProdName": "Microsoft SQL Server",
+      "HelpLink.ProdVer": "14.00.1000",
+      "HelpLink.EvtSrc": "MSSQLServer",
+      "HelpLink.EvtID": "208",
+      "HelpLink.BaseHelpUrl": "http://go.microsoft.com/fwlink",
+      "HelpLink.LinkId": "20476"
+    },
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1053\r\n   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1045\r\n   at SqlServerAdapter.Insert(IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout, String tableName, String columnList, String parameterList, IEnumerable`1 keyProperties, Object entityToInsert) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 784\r\n   at Dapper.Contrib.Extensions.SqlMapperExtensions.Insert[T](IDbConnection connection, T entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 355\r\n   at OnlineStore.Core.Repository.Dapper.DapperGenericRepository`1.Add(TEntity entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\DapperGenericRepository.cs:line 44\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnError\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.SqlClient.SqlConnection\nVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])",
+    "HResult": -2146232060,
+    "Source": ".Net SqlClient Data Provider",
+    "WatsonBuckets": null
+  }
+}

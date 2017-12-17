@@ -1,0 +1,110 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 99,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "Errors": [
+      {
+        "Source": ".Net SqlClient Data Provider",
+        "Number": 544,
+        "State": 1,
+        "Class": 16,
+        "Server": "DESKTOP-MR3PA3D\\SQLEXPRESS",
+        "Message": "Cannot insert explicit value for identity column in table 'Categories' when IDENTITY_INSERT is set to OFF.",
+        "Procedure": "",
+        "LineNumber": 1
+      }
+    ],
+    "ClientConnectionId": "6a60e617-a9d7-4dbc-8057-08ac484fef56",
+    "ClassName": "System.Data.SqlClient.SqlException",
+    "Message": "Cannot insert explicit value for identity column in table 'Categories' when IDENTITY_INSERT is set to OFF.",
+    "Data": {
+      "HelpLink.ProdName": "Microsoft SQL Server",
+      "HelpLink.ProdVer": "14.00.1000",
+      "HelpLink.EvtSrc": "MSSQLServer",
+      "HelpLink.EvtID": "544",
+      "HelpLink.BaseHelpUrl": "http://go.microsoft.com/fwlink",
+      "HelpLink.LinkId": "20476"
+    },
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1053\r\n   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1045\r\n   at SqlServerAdapter.Insert(IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout, String tableName, String columnList, String parameterList, IEnumerable`1 keyProperties, Object entityToInsert) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 784\r\n   at Dapper.Contrib.Extensions.SqlMapperExtensions.Insert[T](IDbConnection connection, T entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 355\r\n   at OnlineStore.Core.Repository.Dapper.DapperGenericRepository`1.Add(TEntity entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\DapperGenericRepository.cs:line 55\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnError\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.SqlClient.SqlConnection\nVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])",
+    "HResult": -2146232060,
+    "Source": ".Net SqlClient Data Provider",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Category",
+        "Value": {
+          "Id": 0,
+          "Name": "Dapper Name",
+          "Description": "Dapper Test"
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "Errors": [
+      {
+        "Source": ".Net SqlClient Data Provider",
+        "Number": 544,
+        "State": 1,
+        "Class": 16,
+        "Server": "DESKTOP-MR3PA3D\\SQLEXPRESS",
+        "Message": "Cannot insert explicit value for identity column in table 'Categories' when IDENTITY_INSERT is set to OFF.",
+        "Procedure": "",
+        "LineNumber": 1
+      }
+    ],
+    "ClientConnectionId": "aa9dec28-cd7e-429e-a835-6abab591a5c0",
+    "ClassName": "System.Data.SqlClient.SqlException",
+    "Message": "Cannot insert explicit value for identity column in table 'Categories' when IDENTITY_INSERT is set to OFF.",
+    "Data": {
+      "HelpLink.ProdName": "Microsoft SQL Server",
+      "HelpLink.ProdVer": "14.00.1000",
+      "HelpLink.EvtSrc": "MSSQLServer",
+      "HelpLink.EvtID": "544",
+      "HelpLink.BaseHelpUrl": "http://go.microsoft.com/fwlink",
+      "HelpLink.LinkId": "20476"
+    },
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)\r\n   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)\r\n   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)\r\n   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()\r\n   at System.Data.SqlClient.SqlDataReader.get_MetaData()\r\n   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)\r\n   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)\r\n   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)\r\n   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)\r\n   at Dapper.SqlMapper.ExecuteReaderWithFlagsFallback(IDbCommand cmd, Boolean wasClosed, CommandBehavior behavior) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1053\r\n   at Dapper.SqlMapper.QueryMultipleImpl(IDbConnection cnn, CommandDefinition& command) in C:\\projects\\dapper\\Dapper\\SqlMapper.cs:line 1045\r\n   at SqlServerAdapter.Insert(IDbConnection connection, IDbTransaction transaction, Nullable`1 commandTimeout, String tableName, String columnList, String parameterList, IEnumerable`1 keyProperties, Object entityToInsert) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 784\r\n   at Dapper.Contrib.Extensions.SqlMapperExtensions.Insert[T](IDbConnection connection, T entityToInsert, IDbTransaction transaction, Nullable`1 commandTimeout) in C:\\projects\\dapper\\Dapper.Contrib\\SqlMapperExtensions.cs:line 355\r\n   at OnlineStore.Core.Repository.Dapper.DapperGenericRepository`1.Add(TEntity entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\Dapper\\DapperGenericRepository.cs:line 55\r\n   at OnlineStore.Business.Services.CategoryService.Add(Category entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 42",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnError\nSystem.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.Data.SqlClient.SqlConnection\nVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])",
+    "HResult": -2146232060,
+    "Source": ".Net SqlClient Data Provider",
+    "WatsonBuckets": null
+  }
+}

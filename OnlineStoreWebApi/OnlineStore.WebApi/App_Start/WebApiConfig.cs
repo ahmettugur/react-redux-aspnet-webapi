@@ -1,4 +1,5 @@
-﻿using OnlineStore.WebApi.MessageHandlers;
+﻿using OnlineStore.Core.ResponseHandler;
+using OnlineStore.WebApi.MessageHandlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,12 @@ namespace OnlineStore.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            config.MessageHandlers.Add(new ApiResponseHandler());
             //config.MessageHandlers.Add(new AuthenticationHandler());
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-            var cors = new EnableCorsAttribute("http://localhost:3000", "*", "*");
+            var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
             // Web API routes
