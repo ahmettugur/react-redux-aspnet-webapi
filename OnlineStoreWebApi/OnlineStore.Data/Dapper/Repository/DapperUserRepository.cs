@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using OnlineStore.Core.Repository.Dapper;
 using OnlineStore.Data.Contracts;
+using OnlineStore.Data.Dapper.Helpers;
 using OnlineStore.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,12 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineStore.Data.Dapper
+namespace OnlineStore.Data.Dapper.Repository
 {
     public class DapperUserRepository : DapperGenericRepository<User>, IUserRespository
     {
         public override string TableName => "Users";
-        public override IDbConnection Connection => new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineStoreContext"].ConnectionString);
+        public override IDbConnection Connection => ConnectionHelper.GetSqlServerConnection();
+        //public override IDbConnection Connection => new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineStoreContext"].ConnectionString);
 
 
         public string[] GetUserRoles(User user)

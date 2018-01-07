@@ -155,7 +155,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Ninject.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.Contracts.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\PostSharp.dll
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\System.Net.Http.Formatting.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Dapper.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Dapper.Contrib.xml
@@ -166,7 +165,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Newtonsoft.Json.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Ninject.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\PostSharp.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\System.Web.Mvc.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.pssym
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll.postsharp
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\OnlineStore.Core.dll.config
@@ -198,3 +196,16 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Cor
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll.postsharp
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\obj\Debug\OnlineStore.Core.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Antlr3.Runtime.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Iesi.Collections.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\NHibernate.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Remotion.Linq.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Antlr3.Runtime.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Iesi.Collections.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\NHibernate.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Remotion.Linq.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\FluentNHibernate.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\FluentNHibernate.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Core\bin\Debug\FluentNHibernate.xml

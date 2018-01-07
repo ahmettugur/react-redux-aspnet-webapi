@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Business.Mappings.AutoMapper.Profiles
 {
-    public class BusinessProfile:Profile
+    public class BusinessProfile : Profile
     {
         public BusinessProfile()
         {

@@ -7,11 +7,11 @@ namespace OnlineStore.Entity.Concrete
     public class Product : IEntity
     {
         [PrimaryKey]
-        public int Id { get; set; }
-        public int CategoryId { get; set; }
-        public string Name { get; set; }
-        public string Details { get; set; }
-        public decimal Price { get; set; }
-        public int StockQuantity { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int CategoryId { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Details { get; set; }
+        public virtual decimal Price { get; set; }
+        public virtual int StockQuantity { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using OnlineStore.Core.Repository.Dapper;
 using OnlineStore.Data.Contracts;
+using OnlineStore.Data.Dapper.Helpers;
 using OnlineStore.Entity.ComplexType;
 using OnlineStore.Entity.Concrete;
 using System;
@@ -12,12 +13,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineStore.Data.Dapper
+namespace OnlineStore.Data.Dapper.Repository
 {
     public class DapperProductRepository : DapperGenericRepository<Product>, IProductRepository
     {
         public override string TableName => "Products";
-        public override IDbConnection Connection => new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineStoreContext"].ConnectionString);
+        public override IDbConnection Connection => ConnectionHelper.GetSqlServerConnection();
+        //public override IDbConnection Connection => new SqlConnection(ConfigurationManager.ConnectionStrings["OnlineStoreContext"].ConnectionString);
 
 
         public List<ProductWithCategory> GetAllProductWithCategory()

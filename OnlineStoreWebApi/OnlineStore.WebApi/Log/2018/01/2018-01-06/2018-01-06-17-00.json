@@ -1,0 +1,147 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "FluentNHibernate.Cfg.FluentConfigurationException",
+    "Message": "An invalid or incomplete configuration was used while creating a SessionFactory. Check PotentialReasons collection, and InnerException for more detail.",
+    "Data": null,
+    "InnerException": {
+      "ClassName": "NHibernate.InvalidProxyTypeException",
+      "Message": "The following types may not be used as proxies:\nOnlineStore.Entity.Concrete.Product: method get_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method get_CategoryId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_CategoryId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method get_Name should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_Name should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method get_Details should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_Details should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method get_Price should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_Price should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method get_StockQuantity should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Product: method set_StockQuantity should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Role: method get_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Role: method set_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Role: method get_Name should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.Role: method set_Name should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method get_UserId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method set_UserId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method get_FullName should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method set_FullName should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method get_Password should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method set_Password should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method get_Email should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.User: method set_Email should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method get_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method set_Id should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method get_RoleId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method set_RoleId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method get_UserId should be 'public/protected virtual' or 'protected internal virtual'\nOnlineStore.Entity.Concrete.UserRole: method set_UserId should be 'public/protected virtual' or 'protected internal virtual'",
+      "Data": null,
+      "InnerException": null,
+      "HelpURL": null,
+      "StackTraceString": "   at NHibernate.Cfg.Configuration.ValidateEntities()\r\n   at NHibernate.Cfg.Configuration.Validate()\r\n   at NHibernate.Cfg.Configuration.BuildSessionFactory()\r\n   at FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()",
+      "RemoteStackTraceString": null,
+      "RemoteStackIndex": 0,
+      "ExceptionMethod": "8\nValidateEntities\nNHibernate, Version=5.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4\nNHibernate.Cfg.Configuration\nVoid ValidateEntities()",
+      "HResult": -2146233088,
+      "Source": "NHibernate",
+      "WatsonBuckets": null,
+      "errors": [
+        "OnlineStore.Entity.Concrete.Product: method get_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method get_CategoryId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_CategoryId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method get_Name should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_Name should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method get_Details should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_Details should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method get_Price should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_Price should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method get_StockQuantity should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Product: method set_StockQuantity should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Role: method get_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Role: method set_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Role: method get_Name should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.Role: method set_Name should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method get_UserId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method set_UserId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method get_FullName should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method set_FullName should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method get_Password should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method set_Password should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method get_Email should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.User: method set_Email should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method get_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method set_Id should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method get_RoleId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method set_RoleId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method get_UserId should be 'public/protected virtual' or 'protected internal virtual'",
+        "OnlineStore.Entity.Concrete.UserRole: method set_UserId should be 'public/protected virtual' or 'protected internal virtual'"
+      ]
+    },
+    "HelpURL": null,
+    "StackTraceString": "   at FluentNHibernate.Cfg.FluentConfiguration.BuildSessionFactory()\r\n   at OnlineStore.Data.NHibernate.Helpers.SqlServerHelper.InitializeSessionFactory() in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Data\\NHibernate\\Helpers\\SqlServerHelper.cs:line 18\r\n   at OnlineStore.Core.Repository.NHibernate.NHibernateHelper.get_SessionFactory() in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\NHibernate\\NHibernateHelper.cs:line 20\r\n   at OnlineStore.Core.Repository.NHibernate.NHibernateHelper.OpenSession() in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\NHibernate\\NHibernateHelper.cs:line 30\r\n   at OnlineStore.Core.Repository.NHibernate.NHEntityRepository`1.GetAll(Expression`1 predicate) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\Repository\\NHibernate\\NHEntityRepository.cs:line 51\r\n   at OnlineStore.Business.Services.CategoryService.<GetAll>z__OriginalMethod(Expression`1 predicate) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\CategoryService.cs:line 62\r\n   at OnlineStore.Business.Services.CategoryService.<GetAll>c__Binding.Invoke(Object& instance, Arguments arguments, Object aspectArgs) in :line 0\r\n   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.Proceed()\r\n   at PostSharp.Aspects.MethodInterceptionAspect.OnInvoke(MethodInterceptionArgs args)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 48\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nBuildSessionFactory\nFluentNHibernate, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null\nFluentNHibernate.Cfg.FluentConfiguration\nNHibernate.ISessionFactory BuildSessionFactory()",
+    "HResult": -2146233088,
+    "Source": "FluentNHibernate",
+    "WatsonBuckets": null,
+    "PotentialReasons": []
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}

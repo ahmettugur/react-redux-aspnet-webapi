@@ -27,7 +27,7 @@ namespace OnlineStore.Business.Services
         private ICategoryRepository _categoryRepository;
         private IMapper _mapper;
 
-        public CategoryService(ICategoryRepository categoryRepository,IMapper mapper)
+        public CategoryService(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
@@ -59,7 +59,7 @@ namespace OnlineStore.Business.Services
         [MethodWorkingTimeAspect(2)]
         public List<Category> GetAll(Expression<Func<Category, bool>> predicate = null)
         {
-            return _mapper.Map<List<Category>>(_categoryRepository.GetAll(predicate));
+            return _mapper.Map<List<Category>>(_categoryRepository.GetAll(predicate).OrderByDescending(_ => _.Id));
         }
 
         [AuthorizationAspect(Roles = "Admin")]

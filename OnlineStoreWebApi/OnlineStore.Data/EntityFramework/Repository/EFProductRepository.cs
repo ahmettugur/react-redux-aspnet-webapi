@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OnlineStore.Entity.ComplexType;
 
-namespace OnlineStore.Data.EntityFramework.Concrete
+namespace OnlineStore.Data.EntityFramework.Repository
 {
     public class EFProductRepository : EFGenericRepository<Product, OnlineStoreContext>, IProductRepository
     {

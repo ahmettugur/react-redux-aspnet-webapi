@@ -6,9 +6,9 @@ namespace OnlineStore.Entity.Concrete
     public class User : IEntity
     {
         [PrimaryKey]
-        public int UserId { get; set; }
-        public string FullName { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        public virtual int UserId { get; set; }
+        public virtual string FullName { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string Email { get; set; }
     }
 }

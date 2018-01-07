@@ -181,7 +181,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Web.Http.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Dapper.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Newtonsoft.Json.dll
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Net.Http.Formatting.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.Contracts.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Core.dll.config
@@ -189,7 +188,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Entity.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\EntityFramework.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\EntityFramework.SqlServer.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\System.Web.Mvc.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Ninject.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\FluentValidation.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\log4net.xml
@@ -238,3 +236,21 @@ D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Dat
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\obj\Debug\OnlineStore.Data.csproj.CoreCompileInputs.cache
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\obj\Debug\OnlineStore.Data.dll
 D:\GithubProject\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\obj\Debug\OnlineStore.Data.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\NHibernate.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Remotion.Linq.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Remotion.Linq.EagerFetching.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Antlr3.Runtime.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Iesi.Collections.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Data.Contracts.dll.config
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Entity.dll.config
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\NHibernate.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Remotion.Linq.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Remotion.Linq.EagerFetching.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Antlr3.Runtime.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\Iesi.Collections.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\FluentNHibernate.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\FluentNHibernate.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\FluentNHibernate.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Business.Contracts.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Business.Contracts.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Data\bin\Debug\OnlineStore.Business.Contracts.dll.config

@@ -1,93 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="96" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="95" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects.AuthorizationAspect">
-    <Instance Declaration="#2=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Add(OnlineStore.Entity.Concrete.Category)" Id="ea667169c2f1bafe">
+    <Instance Declaration="#2=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Add(OnlineStore.Entity.Concrete.Category)" Id="ea6671692414b217">
       <Target>
         <JoinPoint Advising="#1" Description="#3=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="4" />
       </Target>
     </Instance>
-    <Instance Declaration="#4=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Delete(OnlineStore.Entity.Concrete.Category)" Id="ea66716949ecc9c1">
+    <Instance Declaration="#4=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Delete(OnlineStore.Entity.Concrete.Category)" Id="ea6671692b84d0a5">
       <Target>
         <JoinPoint Advising="#1" Description="#3" Ordinal="8" />
       </Target>
     </Instance>
-    <Instance Declaration="#5=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Update(OnlineStore.Entity.Concrete.Category)" Id="ea6671696af8bdd1">
+    <Instance Declaration="#5=M:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService::Update(OnlineStore.Entity.Concrete.Category)" Id="ea667169d6a3a148">
       <Target>
         <JoinPoint Advising="#1" Description="#3" Ordinal="20" />
       </Target>
     </Instance>
-    <Instance Declaration="#6=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Add(OnlineStore.Entity.Concrete.Product)" Id="ea667169571ffa44">
+    <Instance Declaration="#6=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Add(OnlineStore.Entity.Concrete.Product)" Id="ea667169bd572663">
       <Target>
         <JoinPoint Advising="#1" Description="#3" Ordinal="25" />
       </Target>
     </Instance>
-    <Instance Declaration="#7=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Delete(OnlineStore.Entity.Concrete.Product)" Id="ea667169259b9669">
+    <Instance Declaration="#7=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Delete(OnlineStore.Entity.Concrete.Product)" Id="ea6671693bae1457">
       <Target>
         <JoinPoint Advising="#1" Description="#3" Ordinal="29" />
       </Target>
     </Instance>
-    <Instance Declaration="#8=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Update(OnlineStore.Entity.Concrete.Product)" Id="ea667169de8d71c1">
+    <Instance Declaration="#8=M:[OnlineStore.Business]OnlineStore.Business.Services.ProductService::Update(OnlineStore.Entity.Concrete.Product)" Id="ea66716947a3fd62">
       <Target>
         <JoinPoint Advising="#1" Description="#3" Ordinal="45" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#9=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
-    <Instance Declaration="#2" Id="ea66716969980a75">
+    <Instance Declaration="#2" Id="ea66716933830129">
       <Target>
         <JoinPoint Advising="#9" Description="#3" Ordinal="3" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="ea6671693f508999">
+    <Instance Declaration="#5" Id="ea6671691dc23cc9">
       <Target>
         <JoinPoint Advising="#9" Description="#3" Ordinal="19" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="ea667169340fcdb0">
+    <Instance Declaration="#6" Id="ea667169aaaed647">
       <Target>
         <JoinPoint Advising="#9" Description="#3" Ordinal="24" />
       </Target>
     </Instance>
-    <Instance Declaration="#8" Id="ea667169b63935b0">
+    <Instance Declaration="#8" Id="ea6671693dfc926c">
       <Target>
         <JoinPoint Advising="#9" Description="#3" Ordinal="44" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#10=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheRemoveAspect">
-    <Instance Declaration="#2" Id="ea667169ac4463dd">
+    <Instance Declaration="#2" Id="ea66716985ab84cd">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="0" />
       </Target>
     </Instance>
-    <Instance Declaration="#4" Id="ea6671699b4f24f5">
+    <Instance Declaration="#4" Id="ea6671694c937a26">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="7" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="ea667169b98239c4">
+    <Instance Declaration="#5" Id="ea66716961c7a89c">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="16" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="ea667169ff1b2dec">
+    <Instance Declaration="#6" Id="ea667169394d7895">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="21" />
       </Target>
     </Instance>
-    <Instance Declaration="#7" Id="ea66716981cb6b15">
+    <Instance Declaration="#7" Id="ea6671694b5d72df">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="28" />
       </Target>
     </Instance>
-    <Instance Declaration="#8" Id="ea667169ae5274bc">
+    <Instance Declaration="#8" Id="ea667169d7c74949">
       <Target>
         <JoinPoint Advising="#10" Description="#3" Ordinal="41" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#11=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.LogAspects.LogAspect">
-    <Instance Declaration="#12=T:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService" Id="ea667169489dcc59">
+    <Instance Declaration="#12=T:[OnlineStore.Business]OnlineStore.Business.Services.CategoryService" Id="ea66716965e70afb">
       <Target Target="#2">
         <JoinPoint Advising="#11" Description="#3" />
       </Target>
@@ -104,7 +104,7 @@
         <JoinPoint Advising="#11" Description="#3" Ordinal="15" />
       </Target>
     </Instance>
-    <Instance Declaration="#15=T:[OnlineStore.Business]OnlineStore.Business.Services.ProductService" Id="ea6671695dc7b8c1">
+    <Instance Declaration="#15=T:[OnlineStore.Business]OnlineStore.Business.Services.ProductService" Id="ea6671699b689a03">
       <Target Target="#6">
         <JoinPoint Advising="#11" Description="#3" Ordinal="22" />
       </Target>
@@ -126,34 +126,34 @@
     </Instance>
   </Class>
   <Class Class="#19=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.PerformanceAspects.MethodWorkingTimeAspect">
-    <Instance Declaration="#13" Id="ea66716982f5065c">
+    <Instance Declaration="#13" Id="ea667169ae82322d">
       <Target>
         <JoinPoint Advising="#19" Description="#3" Ordinal="9" />
       </Target>
     </Instance>
-    <Instance Declaration="#14" Id="ea667169d5411c2e">
+    <Instance Declaration="#14" Id="ea66716936f68585">
       <Target>
         <JoinPoint Advising="#19" Description="#3" Ordinal="14" />
       </Target>
     </Instance>
-    <Instance Declaration="#16" Id="ea667169207ae9fc">
+    <Instance Declaration="#16" Id="ea667169a2d2489b">
       <Target>
         <JoinPoint Advising="#19" Description="#3" Ordinal="30" />
       </Target>
     </Instance>
-    <Instance Declaration="#17" Id="ea66716979ae573d">
+    <Instance Declaration="#17" Id="ea667169b50b6e3e">
       <Target>
         <JoinPoint Advising="#19" Description="#3" Ordinal="35" />
       </Target>
     </Instance>
-    <Instance Declaration="#18" Id="ea667169ff8e50cb">
+    <Instance Declaration="#18" Id="ea6671697d7dc4d9">
       <Target>
         <JoinPoint Advising="#19" Description="#3" Ordinal="39" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#20=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
-    <Instance Declaration="#12" Id="ea6671699a3fcaa3">
+    <Instance Declaration="#12" Id="ea667169e67cd0c8">
       <Target Target="#2">
         <JoinPoint Advising="#20" Description="#21=Wrapped by advice(s) OnException" Ordinal="2" />
       </Target>
@@ -170,7 +170,7 @@
         <JoinPoint Advising="#20" Description="#21" Ordinal="12" />
       </Target>
     </Instance>
-    <Instance Declaration="#15" Id="ea667169a57bafc3">
+    <Instance Declaration="#15" Id="ea667169bc945972">
       <Target Target="#6">
         <JoinPoint Advising="#20" Description="#21" Ordinal="23" />
       </Target>
@@ -192,17 +192,17 @@
     </Instance>
   </Class>
   <Class Class="#22=T:[OnlineStore.Core]OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect">
-    <Instance Declaration="#14" Id="ea66716914053c24">
+    <Instance Declaration="#14" Id="ea6671692951d02b">
       <Target>
         <JoinPoint Advising="#22" Description="#23=Intercepted by OnInvoke" Ordinal="13" />
       </Target>
     </Instance>
-    <Instance Declaration="#17" Id="ea667169c76feeb8">
+    <Instance Declaration="#17" Id="ea6671699020a10d">
       <Target>
         <JoinPoint Advising="#22" Description="#23" Ordinal="34" />
       </Target>
     </Instance>
-    <Instance Declaration="#18" Id="ea667169256ab880">
+    <Instance Declaration="#18" Id="ea6671697695ab79">
       <Target>
         <JoinPoint Advising="#22" Description="#23" Ordinal="38" />
       </Target>

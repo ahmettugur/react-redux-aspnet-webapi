@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineStore.Data.EntityFramework.Concrete
+namespace OnlineStore.Data.EntityFramework.Repository
 {
     public class EFCategoryRepository : EFGenericRepository<Category, OnlineStoreContext>, ICategoryRepository
     {

@@ -6,8 +6,8 @@ namespace OnlineStore.Entity.Concrete
     public class UserRole : IEntity
     {
         [PrimaryKey]
-        public int Id { get; set; }
-        public int RoleId { get; set; }
-        public int UserId { get; set; }
+        public virtual int Id { get; set; }
+        public virtual int RoleId { get; set; }
+        public virtual int UserId { get; set; }
     }
 }
