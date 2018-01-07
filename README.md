@@ -8,7 +8,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - Redis Cache and Memory Cache
 - Aspect Oriented Programming with Postsharp (4.2.17)
   - AuthorizationAspects
-  - CacheAsepcts
+  - CacheAsepcts (RedisCacheManager and MemoryCacheManager)
   - ExceptionAspects
   - LogAspects
   - ValidationAspects
@@ -36,6 +36,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 ### Database and Postsharp
 ```sh
+Download Redis Install your compoter
 Download Postsahrp (4.2.17). Install your compoter
 Open SQL Server Management Studio > File > Open > File  select Store.sql and execute
 Change OnlineStore.WebApi > Web.config file connection string Data Source your server name
