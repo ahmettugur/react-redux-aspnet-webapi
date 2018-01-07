@@ -1,8 +1,9 @@
 Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 # Web API
-- Generic Repostory Pattern (Entity Framework Reository and Dapper Repository)
+- Generic Repostory Pattern (Dapper Repository, NHibernate Repository, Entity Framework Reository )
 - Dapper
+- NHibernate
 - Entity Framework
 - Aspect Oriented Programming with Postsharp (4.2.17)
   - AuthorizationAspects
