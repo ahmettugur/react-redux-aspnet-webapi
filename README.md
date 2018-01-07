@@ -36,7 +36,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 ### Database and Postsharp
 ```sh
-Download [Redis](https://github.com/MicrosoftArchive/redis/releases) Install your compoter
+* Download [Redis](https://github.com/MicrosoftArchive/redis/releases) Install your compoter
 Download [Postsahrp (4.2.17)](https://www.postsharp.net/downloads/postsharp-4.2/v4.2.17) Install your compoter
 Open SQL Server Management Studio > File > Open > File  select Store.sql and execute
 Change OnlineStore.WebApi > Web.config file connection string Data Source your server name
