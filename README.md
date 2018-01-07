@@ -5,7 +5,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - Dapper
 - NHibernate
 - Entity Framework
-- Redis Cache and MemoryCache
+- Redis Cache and Memory Cache
 - Aspect Oriented Programming with Postsharp (4.2.17)
   - AuthorizationAspects
   - CacheAsepcts
