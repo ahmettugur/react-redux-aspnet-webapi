@@ -1,5 +1,4 @@
-﻿using OnlineStore.Core.Attributes;
-using OnlineStore.Core.Contracts.Entities;
+﻿using OnlineStore.Core.Contracts.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;

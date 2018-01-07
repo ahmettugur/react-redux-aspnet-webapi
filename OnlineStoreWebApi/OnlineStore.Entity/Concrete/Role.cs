@@ -1,4 +1,4 @@
-﻿using OnlineStore.Core.Attributes;
+﻿using OnlineStore.Core.Contracts.Attributes;
 using OnlineStore.Core.Contracts.Entities;
 
 namespace OnlineStore.Entity.Concrete

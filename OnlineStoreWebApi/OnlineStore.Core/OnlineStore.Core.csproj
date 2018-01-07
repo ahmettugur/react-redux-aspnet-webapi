@@ -77,11 +77,15 @@
     <Reference Include="Remotion.Linq.EagerFetching, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.EagerFetching.2.1.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
     </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -106,6 +110,8 @@
     <Compile Include="CrossCuttingConcerns\Aspects\Postsharp\ValidationAspects\FluentValidationAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Caching\ICacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Caching\Microsoft\MemoryCacheManager.cs" />
+    <Compile Include="CrossCuttingConcerns\Caching\Redis\RedisCacheManager.cs" />
+    <Compile Include="CrossCuttingConcerns\Caching\Redis\RedisConnectionFactory.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\JsonLayout.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\LoggerService.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\DatabaseLogger.cs" />
@@ -115,7 +121,6 @@
     <Compile Include="CrossCuttingConcerns\Logging\LogParameter.cs" />
     <Compile Include="CrossCuttingConcerns\Security\CustomIdentity.cs" />
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
-    <Compile Include="Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="Repository\Dapper\DapperGenericRepository.cs" />
     <Compile Include="Repository\Dapper\DynamicQueryResult.cs" />
     <Compile Include="Repository\Dapper\GenerateDynamicQuery.cs" />

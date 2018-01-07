@@ -1,0 +1,84 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.NotSupportedException",
+    "Message": "Int32Converter cannot convert from System.Int64.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.ComponentModel.TypeConverter.GetConvertFromException(Object value)\r\n   at System.ComponentModel.TypeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)\r\n   at System.ComponentModel.BaseNumberConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)\r\n   at System.ComponentModel.TypeConverter.ConvertFrom(Object value)\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.Convert[T](ExpandoObject source, T example) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 70\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 94\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nGetConvertFromException\nSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.ComponentModel.TypeConverter\nSystem.Exception GetConvertFromException(System.Object)",
+    "HResult": -2146233067,
+    "Source": "System",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.ArgumentException",
+    "Message": "The value \"OnlineStore.Entity.Concrete.Category\" is not of type \"System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]\" and cannot be used in this generic collection.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.ThrowHelper.ThrowWrongValueTypeArgumentException(Object value, Type targetType)\r\n   at System.Collections.Generic.List`1.System.Collections.IList.Add(Object item)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 96\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nThrowWrongValueTypeArgumentException\nmscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.ThrowHelper\nVoid ThrowWrongValueTypeArgumentException(System.Object, System.Type)",
+    "HResult": -2147024809,
+    "Source": "mscorlib",
+    "WatsonBuckets": null,
+    "ParamName": "value"
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.ArgumentException",
+    "Message": "The value \"OnlineStore.Entity.Concrete.Category\" is not of type \"System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]\" and cannot be used in this generic collection.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at System.ThrowHelper.ThrowWrongValueTypeArgumentException(Object value, Type targetType)\r\n   at System.Collections.Generic.List`1.System.Collections.IList.Add(Object item)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 96\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nThrowWrongValueTypeArgumentException\nmscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\nSystem.ThrowHelper\nVoid ThrowWrongValueTypeArgumentException(System.Object, System.Type)",
+    "HResult": -2147024809,
+    "Source": "mscorlib",
+    "WatsonBuckets": null,
+    "ParamName": "value"
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 98\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}

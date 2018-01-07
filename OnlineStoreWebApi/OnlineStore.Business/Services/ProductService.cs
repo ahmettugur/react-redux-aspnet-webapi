@@ -18,6 +18,7 @@ using OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.PerformanceAspects
 using OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects;
 using AutoMapper;
 using OnlineStore.Entity.ComplexType;
+using OnlineStore.Core.CrossCuttingConcerns.Caching.Redis;
 
 namespace OnlineStore.Business.Services
 {
@@ -36,14 +37,16 @@ namespace OnlineStore.Business.Services
 
         [AuthorizationAspect(Roles = "Admin")]
         [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Product Add(Product entity)
         {
             return _productRepository.Add(entity);
         }
 
         [AuthorizationAspect(Roles = "Admin")]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
         public int Delete(Product entity)
         {
             return _productRepository.Delete(entity);
@@ -55,14 +58,16 @@ namespace OnlineStore.Business.Services
             return _mapper.Map<Product>(_productRepository.Get(predicate));
         }
 
-        [CacheAspect(typeof(MemoryCacheManager))]
+        //[CacheAspect(typeof(MemoryCacheManager))]
+        //[CacheAspect(typeof(RedisCacheManager), 60, typeof(Product))]
         [MethodWorkingTimeAspect(2)]
         public List<Product> GetAll(Expression<Func<Product, bool>> predicate = null)
         {
             return _mapper.Map<List<Product>>(_productRepository.GetAll(predicate));
         }
 
-        [CacheAspect(typeof(MemoryCacheManager))]
+        //[CacheAspect(typeof(MemoryCacheManager))]
+        [CacheAspect(typeof(RedisCacheManager), 60, typeof(ProductWithCategory))]
         [MethodWorkingTimeAspect(2)]
         public List<ProductWithCategory> GetAllProductWithCategory()
         {
@@ -71,7 +76,8 @@ namespace OnlineStore.Business.Services
 
         [AuthorizationAspect(Roles = "Admin")]
         [FluentValidationAspect(typeof(ProductValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
         public Product Update(Product entity)
         {
             return _productRepository.Update(entity);

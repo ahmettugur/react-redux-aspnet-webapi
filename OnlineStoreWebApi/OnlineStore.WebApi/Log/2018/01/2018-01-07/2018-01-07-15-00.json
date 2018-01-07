@@ -1,0 +1,184 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "Newtonsoft.Json.JsonSerializationException",
+    "Message": "Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.Category2' because the type requires a JSON object (e.g. {\"name\":\"value\"}) to deserialize correctly.\r\nTo fix this error either change the JSON to a JSON object (e.g. {\"name\":\"value\"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.\r\nPath '', line 1, position 1.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)\r\n   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)\r\n   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Caching.Redis.RedisCacheManager.Get[T](String key) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Caching\\Redis\\RedisCacheManager.cs:line 46\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 46\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nEnsureArrayContract\nNewtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed\nNewtonsoft.Json.Serialization.JsonSerializerInternalReader\nNewtonsoft.Json.Serialization.JsonArrayContract EnsureArrayContract(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract)",
+    "HResult": -2146233088,
+    "Source": "Newtonsoft.Json",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'System.Collections.Generic.List`1[OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.Category2]' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": {},
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 46\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.NullReferenceException",
+    "Message": "Object reference not set to an instance of an object.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnInvoke\nOnlineStore.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nOnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect\nVoid OnInvoke(PostSharp.Aspects.MethodInterceptionArgs)",
+    "HResult": -2147467261,
+    "Source": "OnlineStore.Core",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 47\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 50\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}

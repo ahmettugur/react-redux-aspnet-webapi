@@ -57,10 +57,6 @@
       <Project>{8F128C8E-BEA5-4EFA-8813-69C9F3F52270}</Project>
       <Name>OnlineStore.Core.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnlineStore.Core\OnlineStore.Core.csproj">
-      <Project>{a16a335f-b308-4608-92f8-eb5a13d83685}</Project>
-      <Name>OnlineStore.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

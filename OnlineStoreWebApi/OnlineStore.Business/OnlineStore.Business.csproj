@@ -96,7 +96,7 @@
       <Name>OnlineStore.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Entity\OnlineStore.Entity.csproj">
-      <Project>{329BB024-D177-481F-9BCA-CC4D59C6DE5C}</Project>
+      <Project>{329bb024-d177-481f-9bca-cc4d59c6de5c}</Project>
       <Name>OnlineStore.Entity</Name>
     </ProjectReference>
   </ItemGroup>

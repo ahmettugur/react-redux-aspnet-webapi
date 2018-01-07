@@ -27,6 +27,7 @@ namespace OnlineStore.Core.CrossCuttingConcerns.Caching.Microsoft
             }
 
             var policy = new CacheItemPolicy { AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(expireAsMinute) };
+            _cache.Add(new CacheItem(key, data), policy);
         }
 
         public void Clear()

@@ -1,0 +1,146 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'System.Collections.Generic.List`1[OnlineStore.Entity.Concrete.Category]'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at PostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1.set_ReturnValue(Object value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 45\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nset_ReturnValue\nPostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7\nPostSharp.Aspects.Internals.MethodInterceptionArgsImpl`1\nVoid set_ReturnValue(System.Object)",
+    "HResult": -2147467262,
+    "Source": "PostSharp",
+    "WatsonBuckets": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.InvalidCastException",
+    "Message": "Unable to cast object of type 'System.Collections.Generic.List`1[System.Object]' to type 'System.Dynamic.ExpandoObject'.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)\r\n   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)\r\n   at OnlineStore.Core.CrossCuttingConcerns.Caching.Redis.RedisCacheManager.Get[T](String key) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Caching\\Redis\\RedisCacheManager.cs:line 46\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 46\r\n   at OnlineStore.Business.Services.CategoryService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nDeserializeObject\nNewtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed\nNewtonsoft.Json.JsonConvert\nT DeserializeObject[T](System.String, Newtonsoft.Json.JsonSerializerSettings)",
+    "HResult": -2147467262,
+    "Source": "Newtonsoft.Json",
+    "WatsonBuckets": null
+  }
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineStore.Core.Contracts.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Entity.ComplexType
 {
-    public class ProductWithCategory
+    public class ProductWithCategory : IEntity
     {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }

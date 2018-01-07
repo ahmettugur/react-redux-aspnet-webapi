@@ -17,6 +17,7 @@ using OnlineStore.Business.ValidationRules.FluentValidation;
 using OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.PerformanceAspects;
 using OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.LogAspects;
 using AutoMapper;
+using OnlineStore.Core.CrossCuttingConcerns.Caching.Redis;
 
 namespace OnlineStore.Business.Services
 {
@@ -35,7 +36,8 @@ namespace OnlineStore.Business.Services
 
         [AuthorizationAspect(Roles = "Admin")]
         [FluentValidationAspect(typeof(CategoryValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Category Add(Category entity)
         {
             return _categoryRepository.Add(entity);
@@ -43,7 +45,8 @@ namespace OnlineStore.Business.Services
 
 
         [AuthorizationAspect(Roles = "Admin")]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
         public int Delete(Category entity)
         {
             return _categoryRepository.Delete(entity);
@@ -55,7 +58,8 @@ namespace OnlineStore.Business.Services
             return _mapper.Map<Category>(_categoryRepository.Get(predicate));
         }
 
-        [CacheAspect(typeof(MemoryCacheManager))]
+        [CacheAspect(typeof(RedisCacheManager),60, typeof(Category))]
+        //[CacheAspect(typeof(MemoryCacheManager))]
         [MethodWorkingTimeAspect(2)]
         public List<Category> GetAll(Expression<Func<Category, bool>> predicate = null)
         {
@@ -64,7 +68,8 @@ namespace OnlineStore.Business.Services
 
         [AuthorizationAspect(Roles = "Admin")]
         [FluentValidationAspect(typeof(CategoryValidator))]
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+        [CacheRemoveAspect(typeof(RedisCacheManager))]
+        //[CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Category Update(Category entity)
         {
             return _categoryRepository.Update(entity);

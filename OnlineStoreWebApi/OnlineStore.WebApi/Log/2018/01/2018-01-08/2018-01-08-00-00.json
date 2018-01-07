@@ -1,0 +1,696 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "StackExchange.Redis.RedisTimeoutException",
+    "Message": "Timeout performing EXISTS OnlineStore.Business.Services.ProductService.GetAll._ => (_.CategoryId == value(OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0).categoryId), inst: 0, mgr: PrepareActiveSockets, err: never, queue: 0, qu: 0, qs: 0, qc: 0, wr: 0, wq: 0, in: 0, ar: 0, clientName: DESKTOP-MR3PA3D, serverEndpoint: Unspecified/localhost:6379, keyHashSlot: 12723, IOCP: (Busy=0,Free=1000,Min=4,Max=1000), WORKER: (Busy=1,Free=8190,Min=4,Max=8191) (Please take a look at this article for some common client-side issues that can cause timeouts: http://stackexchange.github.io/StackExchange.Redis/Timeouts)",
+    "Data": {
+      "redis-command": "EXISTS OnlineStore.Business.Services.ProductService.GetAll._ => (_.CategoryId == value(OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0).categoryId)",
+      "request-sent-status": 2,
+      "redis-server": "localhost:6379",
+      "Redis-Message": "EXISTS OnlineStore.Business.Services.ProductService.GetAll._ => (_.CategoryId == value(OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0).categoryId)",
+      "Redis-Instantaneous": "0",
+      "Redis-Manager-State": "PrepareActiveSockets",
+      "Redis-Last-Error": "never",
+      "Redis-Queue-Length": "0",
+      "Redis-Queue-Outstanding": "0",
+      "Redis-Queue-Awaiting-Response": "0",
+      "Redis-Queue-Completion-Outstanding": "0",
+      "Redis-Active-Writers": "0",
+      "Redis-Write-Queue": "0",
+      "Redis-Inbound-Bytes": "0",
+      "Redis-Active-Readers": "0",
+      "Redis-Client-Name": "DESKTOP-MR3PA3D",
+      "Redis-Server-Endpoint": "Unspecified/localhost:6379",
+      "Redis-Key-HashSlot": "12723",
+      "Redis-ThreadPool-IO-Completion": "(Busy=0,Free=1000,Min=4,Max=1000)",
+      "Redis-ThreadPool-Workers": "(Busy=1,Free=8190,Min=4,Max=8191)",
+      "Redis-Busy-Workers": "1"
+    },
+    "InnerException": null,
+    "HelpURL": "http://stackexchange.github.io/StackExchange.Redis/Timeouts",
+    "StackTraceString": "   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\\code\\StackExchange.Redis\\StackExchange.Redis\\StackExchange\\Redis\\ConnectionMultiplexer.cs:line 2120\r\n   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\\code\\StackExchange.Redis\\StackExchange.Redis\\StackExchange\\Redis\\RedisBase.cs:line 81\r\n   at StackExchange.Redis.RedisDatabase.KeyExists(RedisKey key, CommandFlags flags) in c:\\code\\StackExchange.Redis\\StackExchange.Redis\\StackExchange\\Redis\\RedisDatabase.cs:line 593\r\n   at OnlineStore.Core.CrossCuttingConcerns.Caching.Redis.RedisCacheManager.IsExist(String key) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Caching\\Redis\\RedisCacheManager.cs:line 52\r\n   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts.CacheAspect.OnInvoke(MethodInterceptionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\CacheAsepcts\\CacheAspect.cs:line 80\r\n   at OnlineStore.Business.Services.ProductService.GetAll(Expression`1 predicate) in :line 0",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nExecuteSyncImpl\nStackExchange.Redis, Version=1.2.6.0, Culture=neutral, PublicKeyToken=null\nStackExchange.Redis.ConnectionMultiplexer\nT ExecuteSyncImpl[T](StackExchange.Redis.Message, StackExchange.Redis.ResultProcessor`1[T], StackExchange.Redis.ServerEndPoint)",
+    "HResult": -2146233083,
+    "Source": "StackExchange.Redis",
+    "WatsonBuckets": null,
+    "commandStatus": 2
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 4
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 1
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 7
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 5
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 3
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 3
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 3
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 8
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
