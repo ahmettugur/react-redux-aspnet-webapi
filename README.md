@@ -34,7 +34,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
   - Postsharp (4.2.17)
   - node.js 8 >
 
-### Database and Postsharp
+### Database, Postsharp and Redis Installation
 
 * Download [Redis](https://github.com/MicrosoftArchive/redis/releases) Install your computer
 * Download [Postsahrp (4.2.17)](https://www.postsharp.net/downloads/postsharp-4.2/v4.2.17) Install your computer
