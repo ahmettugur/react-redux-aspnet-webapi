@@ -1,0 +1,515 @@
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "CategoryService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": null
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 6
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 4
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAll",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "categoryId",
+                "AssemblyName": "OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0",
+                "Signature": "Int32 categoryId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass2_0, OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "categoryId": 2
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "CategoryId",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 CategoryId",
+                "Signature2": "System.Int32 CategoryId",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Product",
+        "Value": {
+          "Id": 0,
+          "CategoryId": 7,
+          "Name": "ert",
+          "Details": "erter",
+          "Price": 6.0,
+          "StockQuantity": 6
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "ClassName": "System.Security.SecurityException",
+    "Message": "You are not authorized.",
+    "Data": null,
+    "InnerException": null,
+    "HelpURL": null,
+    "StackTraceString": "   at OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects.AuthorizationAspect.OnEntry(MethodExecutionArgs args) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Core\\CrossCuttingConcerns\\Aspects\\Postsharp\\AuthorizationAspects\\AuthorizationAspect.cs:line 38\r\n   at OnlineStore.Business.Services.ProductService.Add(Product entity) in D:\\GithubProjectExample\\ReactAndReduxWithAspNetWebApi\\OnlineStoreWebApi\\OnlineStore.Business\\Services\\ProductService.cs:line 45",
+    "RemoteStackTraceString": null,
+    "RemoteStackIndex": 0,
+    "ExceptionMethod": "8\nOnEntry\nOnlineStore.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nOnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspects.AuthorizationAspect\nVoid OnEntry(PostSharp.Aspects.MethodExecutionArgs)",
+    "HResult": -2146233078,
+    "Source": "OnlineStore.Core",
+    "WatsonBuckets": null,
+    "Action": 0,
+    "FirstPermissionThatFailed": null,
+    "Demanded": null,
+    "GrantedSet": null,
+    "RefusedSet": null,
+    "Denied": null,
+    "PermitOnly": null,
+    "Assembly": null,
+    "Method": null,
+    "Method_String": null,
+    "Zone": 0,
+    "Url": null
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "Add",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Product",
+        "Value": {
+          "Id": 0,
+          "CategoryId": 8,
+          "Name": "opðo",
+          "Details": "ýpý",
+          "Price": 7.0,
+          "StockQuantity": 4
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "Get",
+    "Parameters": [
+      {
+        "Name": "predicate",
+        "Type": "Expression`1",
+        "Value": {
+          "Type": "System.Func`2[[OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "NodeType": 18,
+          "Parameters": [
+            {
+              "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+              "NodeType": 38,
+              "Name": "_",
+              "IsByRef": false,
+              "CanReduce": false
+            }
+          ],
+          "Name": null,
+          "Body": {
+            "Type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "NodeType": 13,
+            "CanReduce": false,
+            "Right": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "productId",
+                "AssemblyName": "OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass3_0",
+                "Signature": "Int32 productId",
+                "Signature2": null,
+                "MemberType": 4,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.WebApi.SelfHost.Controllers.ProductsController+<>c__DisplayClass3_0, OnlineStore.WebApi.SelfHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 9,
+                "Value": {
+                  "productId": 81
+                },
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Left": {
+              "Type": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+              "Member": {
+                "Name": "Id",
+                "AssemblyName": "OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "ClassName": "OnlineStore.Entity.Concrete.Product",
+                "Signature": "Int32 Id",
+                "Signature2": "System.Int32 Id",
+                "MemberType": 16,
+                "GenericArguments": null
+              },
+              "Expression": {
+                "Type": "OnlineStore.Entity.Concrete.Product, OnlineStore.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "NodeType": 38,
+                "Name": "_",
+                "IsByRef": false,
+                "CanReduce": false
+              },
+              "NodeType": 23,
+              "CanReduce": false
+            },
+            "Method": null,
+            "Conversion": null,
+            "IsLifted": false,
+            "IsLiftedToNull": false
+          },
+          "ReturnType": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "TailCall": false,
+          "CanReduce": false
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "Update",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Product",
+        "Value": {
+          "Id": 81,
+          "CategoryId": 8,
+          "Name": "ppp",
+          "Details": "ýpý",
+          "Price": 7.0,
+          "StockQuantity": 4
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "Delete",
+    "Parameters": [
+      {
+        "Name": "entity",
+        "Type": "Product",
+        "Value": {
+          "Id": 81,
+          "CategoryId": 0,
+          "Name": null,
+          "Details": null,
+          "Price": 0.0,
+          "StockQuantity": 0
+        }
+      }
+    ]
+  }
+}
+{
+  "UserName": "DESKTOP-MR3PA3D\\ALPEREN",
+  "MessageObject": {
+    "FullName": "ProductService",
+    "MethodName": "GetAllProductWithCategory",
+    "Parameters": []
+  }
+}

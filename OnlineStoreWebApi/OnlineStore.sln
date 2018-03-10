@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Core", "1 - Core", "{F86E1686-7750-4DD8-BAAC-76AE63CF02B4}"
 EndProject
@@ -23,11 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Business.Contra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Entity", "2 - Entity", "{6EF207D4-9E0B-492F-9F36-4DE3836ADF55}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - UI", "5 - UI", "{32AEEAFE-9424-4507-86A2-11FF94303EE0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Host", "5 - Host", "{32AEEAFE-9424-4507-86A2-11FF94303EE0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.WebApi", "OnlineStore.WebApi\OnlineStore.WebApi.csproj", "{968A816C-0405-4CDC-8482-09EEC4F33A78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Entity", "OnlineStore.Entity\OnlineStore.Entity.csproj", "{329BB024-D177-481F-9BCA-CC4D59C6DE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.WebApi.SelfHost", "OnlineStore.WebApi.SelfHost\OnlineStore.WebApi.SelfHost.csproj", "{760C5D06-8B2D-4286-82EB-14EBD5C4B701}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{329BB024-D177-481F-9BCA-CC4D59C6DE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{329BB024-D177-481F-9BCA-CC4D59C6DE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{329BB024-D177-481F-9BCA-CC4D59C6DE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760C5D06-8B2D-4286-82EB-14EBD5C4B701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760C5D06-8B2D-4286-82EB-14EBD5C4B701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760C5D06-8B2D-4286-82EB-14EBD5C4B701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760C5D06-8B2D-4286-82EB-14EBD5C4B701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{8C7B131C-AA2D-4CF5-B7C6-CA52E5740C79} = {B8E96FA1-BA87-4BA9-B298-4FECB3D55BBE}
 		{968A816C-0405-4CDC-8482-09EEC4F33A78} = {32AEEAFE-9424-4507-86A2-11FF94303EE0}
 		{329BB024-D177-481F-9BCA-CC4D59C6DE5C} = {6EF207D4-9E0B-492F-9F36-4DE3836ADF55}
+		{760C5D06-8B2D-4286-82EB-14EBD5C4B701} = {32AEEAFE-9424-4507-86A2-11FF94303EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D456B00-20DC-4DE1-97F8-CCBEA9A4DD5C}
