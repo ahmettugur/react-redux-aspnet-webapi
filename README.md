@@ -37,7 +37,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 ### Database, Postsharp and Redis Installation
 
-* Download [Memcahed](https://commaster.net/content/installing-memcached-windows) Install your computer
+* Download [Memcached](https://commaster.net/content/installing-memcached-windows) Install your computer
 * Download [Redis](https://github.com/MicrosoftArchive/redis/releases) Install your computer
 * Download [Postsahrp (4.2.17)](https://www.postsharp.net/downloads/postsharp-4.2/v4.2.17) Install your computer
 * Open SQL Server Management Studio > File > Open > File  select Store.sql and execute
