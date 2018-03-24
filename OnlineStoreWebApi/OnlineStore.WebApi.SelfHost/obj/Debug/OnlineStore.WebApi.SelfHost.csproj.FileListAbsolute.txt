@@ -76,7 +76,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\log4net.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\StackExchange.Redis.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Dapper.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\FluentNHibernate.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\FluentNHibernate.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Remotion.Linq.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Remotion.Linq.EagerFetching.xml
@@ -85,3 +84,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\System.Web.Http.Cors.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\System.Web.Http.Cors.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Dapper.Contrib.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Enyim.Caching.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\bin\Debug\Enyim.Caching.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.WebApi.SelfHost\obj\Debug\OnlineStore.WebApi.SelfHost.exe.config

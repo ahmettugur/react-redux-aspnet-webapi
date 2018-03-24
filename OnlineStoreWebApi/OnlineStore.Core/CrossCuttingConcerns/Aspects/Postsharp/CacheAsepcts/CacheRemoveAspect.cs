@@ -41,7 +41,8 @@ namespace OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.CacheAsepcts
 
         public override void OnSuccess(MethodExecutionArgs args)
         {
-            _cacheManager.RemoveByPattern(string.IsNullOrEmpty(_pattern) ? $"{args.Method.ReflectedType.Namespace}.{args.Method.ReflectedType.Name}.*" : _pattern);
+            _cacheManager.Remove($"{args.Method.ReflectedType.Namespace}.{args.Method.ReflectedType.Name}.{args.Method.Name}*");
+            //_cacheManager.RemoveByPattern(string.IsNullOrEmpty(_pattern) ? $"{args.Method.ReflectedType.Namespace}.{args.Method.ReflectedType.Name}.*" : _pattern);
         }
     }
 }

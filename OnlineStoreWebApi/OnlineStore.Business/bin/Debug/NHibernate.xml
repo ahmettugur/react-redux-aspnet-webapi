@@ -253,6 +253,18 @@
             </summary>
             <value>The current <see cref="T:System.Data.Common.DbCommand"/>.</value>
         </member>
+        <member name="P:NHibernate.AdoNet.AbstractBatcher.CurrentCommandSql">
+            <summary>
+            Gets the current <see cref="T:NHibernate.SqlCommand.SqlString"/> that is contained for this Batch
+            </summary>
+            <value>The current <see cref="T:NHibernate.SqlCommand.SqlString"/>.</value>
+        </member>
+        <member name="P:NHibernate.AdoNet.AbstractBatcher.CurrentCommandParameterTypes">
+            <summary>
+            Gets the current <see cref="T:NHibernate.SqlTypes.SqlType"/> parameters that are contained for this Batch
+            </summary>
+            <value>The current <see cref="T:NHibernate.SqlCommand.SqlString"/>.</value>
+        </member>
         <member name="M:NHibernate.AdoNet.AbstractBatcher.Prepare(System.Data.Common.DbCommand)">
             <summary>
             Prepares the <see cref="T:System.Data.Common.DbCommand"/> for execution in the database.
@@ -392,21 +404,34 @@
             </summary>
             <param name="transaction">The transaction in which the connection should be enlisted.</param>
         </member>
+        <member name="T:NHibernate.AdoNet.GenericBatchingBatcher">
+            <summary>
+            A generic batcher that will batch UPDATE/INSERT/DELETE commands by concatenating them with a semicolon.
+            Use this batcher only if there are no dedicated batchers in the given environment. Unfortunately some
+            database clients do not support concatenating commands with a semicolon. Here are the known clients
+            that do not work with this batcher:
+            - FirebirdSql.Data.FirebirdClient
+            - Oracle.ManagedDataAccess
+            - System.Data.SqlServerCe
+            </summary>
+        </member>
         <member name="T:NHibernate.AdoNet.IBatcherFactory">
             <summary> Factory for <see cref="T:NHibernate.Engine.IBatcher"/> instances.</summary>
         </member>
         <member name="T:NHibernate.AdoNet.IEmbeddedBatcherFactoryProvider">
             <summary>
-            Provide the class of <see cref="T:NHibernate.AdoNet.IBatcherFactory"/> according to the configuration 
-            and the capabilities of the driver.
+            Provides a default <see cref="T:NHibernate.AdoNet.IBatcherFactory"/> class.
             </summary>
             <remarks>
-            By default, .Net doesn't have any batching capabilities, drivers that does have
-            batching support.
-            The BatcherFactory trough session-factory configuration section.
-            This interface was added in NHibernate for backdraw compatibility to have the ability
-            to specify a default <see cref="T:NHibernate.AdoNet.IBatcherFactory"/> for a specific <see cref="T:NHibernate.Driver.IDriver"/>.
+            This interface allows to specify a default <see cref="T:NHibernate.AdoNet.IBatcherFactory"/> for a specific
+            <see cref="T:NHibernate.Driver.IDriver"/>. The configuration setting <see cref="F:NHibernate.Cfg.Environment.BatchStrategy"/>
+            takes precedence over <c>BatcherFactoryClass</c>.
             </remarks>
+        </member>
+        <member name="P:NHibernate.AdoNet.IEmbeddedBatcherFactoryProvider.BatcherFactoryClass">
+            <summary>
+            The <see cref="T:NHibernate.AdoNet.IBatcherFactory"/> class type.
+            </summary>
         </member>
         <member name="P:NHibernate.AdoNet.IExpectation.ExpectedRowCount">
             <summary>
@@ -1368,12 +1393,6 @@
             Note, in particular, that an LRU cache expiry policy is never appropriate.
             </summary>
         </member>
-        <member name="M:NHibernate.Cache.UpdateTimestampsCache.InvalidateAsync(System.Object[],System.Threading.CancellationToken)">
-            <summary></summary>
-        </member>
-        <member name="M:NHibernate.Cache.UpdateTimestampsCache.Invalidate(System.Object[])">
-            <summary></summary>
-        </member>
         <member name="T:NHibernate.Cache.Access.ISoftLock">
             <summary>
             Marker interface, denoting a client-visible "soft lock" on a cached item.
@@ -2292,6 +2311,34 @@
             PersistentSet.
             </summary>
         </member>
+        <member name="T:NHibernate.Collection.ILazyInitializedCollection">
+            <summary>
+            This interface allows to check if a lazy collection is already initialized and to force its initialization.
+            </summary>
+            <remarks>
+            This interface is provided to allow implementing lazy initialized collections which do not implement
+            <see cref="T:NHibernate.Collection.IPersistentCollection" />.
+            That is e.g. needed for NHibernate.Envers which can't load its collections as PersistentCollections.
+            </remarks>
+        </member>
+        <member name="M:NHibernate.Collection.ILazyInitializedCollection.ForceInitializationAsync(System.Threading.CancellationToken)">
+            <summary>
+            Force immediate initialization.
+            </summary>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
+        </member>
+        <member name="P:NHibernate.Collection.ILazyInitializedCollection.WasInitialized">
+            <summary>
+            Return <see langword="true"/> if the proxy has already been initialized.
+            If <see langword="false"/>, accessing the collection or calling <see cref="M:NHibernate.Collection.ILazyInitializedCollection.ForceInitialization" />
+            initializes the collection.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Collection.ILazyInitializedCollection.ForceInitialization">
+            <summary>
+            Force immediate initialization.
+            </summary>
+        </member>
         <member name="T:NHibernate.Collection.IPersistentCollection">
             <summary>
             <para>
@@ -3062,7 +3109,10 @@
             <summary>
             Provides a <see cref="M:NHibernate.ISessionFactory.GetCurrentSession">current session</see>
             for each <see cref="T:System.Runtime.Remoting.Messaging.CallContext"/>.
-            Not recommended for .NET 2.0 web applications.
+            Uses <see cref="T:System.Threading.AsyncLocal`1"/> instead if run under .NET Core/.NET Standard.
+            <remarks>
+            <para>Not recommended for .NET 2.0 web applications.</para>
+            </remarks>
             </summary>
         </member>
         <member name="M:NHibernate.Context.CallSessionContext.SetMap(System.Collections.IDictionary)">
@@ -3436,6 +3486,43 @@
             <param name="criteria">The criteria.</param>
             <param name="criteriaQuery">The criteria query.</param>
             <returns></returns>
+        </member>
+        <member name="T:NHibernate.Criterion.EntityProjection">
+            <summary>
+            Entity projection
+            </summary>
+        </member>
+        <member name="M:NHibernate.Criterion.EntityProjection.#ctor">
+            <summary>
+            Root entity projection
+            </summary>
+        </member>
+        <member name="M:NHibernate.Criterion.EntityProjection.#ctor(System.Type,System.String)">
+            <summary>
+            Entity projection for given type and alias
+            </summary>
+            <param name="entityType">Type of entity</param>
+            <param name="entityAlias">Entity alias</param>
+        </member>
+        <member name="P:NHibernate.Criterion.EntityProjection.FetchLazyProperties">
+            <summary>
+            Fetch lazy properties
+            </summary>
+        </member>
+        <member name="P:NHibernate.Criterion.EntityProjection.Lazy">
+            <summary>
+            Lazy load entity
+            </summary>
+        </member>
+        <member name="M:NHibernate.Criterion.EntityProjection.SetLazy(System.Boolean)">
+            <summary>
+            Lazy load entity
+            </summary>
+        </member>
+        <member name="M:NHibernate.Criterion.EntityProjection.SetFetchLazyProperties(System.Boolean)">
+            <summary>
+            Fetch lazy properties
+            </summary>
         </member>
         <member name="T:NHibernate.Criterion.EqPropertyExpression">
             <summary>
@@ -4915,6 +5002,36 @@
             criterion and order instances.
             </summary>
         </member>
+        <member name="M:NHibernate.Criterion.Projections.RootEntity">
+            <summary>
+            Projection for root entity.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Criterion.Projections.Entity(System.Type,System.String)">
+            <summary>
+            Projection for entity with given alias.
+            </summary>
+            <param name="type">The type of the entity.</param>
+            <param name="alias">The alias of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Criterion.Projections.Entity``1(System.String)">
+            <summary>
+            Projection for entity with given alias.
+            </summary>
+            /// <typeparam name="T">The type of the entity.</typeparam>
+            <param name="alias">The alias of the entity.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Criterion.Projections.Entity``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Projection for entity with given alias.
+            </summary>
+            /// <typeparam name="T">The type of the entity.</typeparam>
+            <param name="alias">The alias of the entity.</param>
+            <returns>A projection of the entity.</returns>
+        </member>
         <member name="M:NHibernate.Criterion.Projections.Distinct(NHibernate.Criterion.IProjection)">
             <summary>
             Create a distinct projection from a projection
@@ -5215,6 +5332,14 @@
             <param name="alias">LambdaExpression returning an alias</param>
             <returns>return NHibernate.Criterion.IProjection</returns>
         </member>
+        <member name="M:NHibernate.Criterion.ProjectionsExtensions.WithAlias(NHibernate.Criterion.IProjection,System.String)">
+            <summary>
+            Create an alias for a projection
+            </summary>
+            <param name="projection">the projection instance</param>
+            <param name="alias">alias</param>
+            <returns>return NHibernate.Criterion.IProjection</returns>
+        </member>
         <member name="M:NHibernate.Criterion.ProjectionsExtensions.Sqrt(System.Double)">
             <summary>
             Project SQL function sqrt()
@@ -5321,6 +5446,11 @@
             <summary>
             Project SQL function mod()
             Note: throws an exception outside of a QueryOver expression
+            </summary>
+        </member>
+        <member name="M:NHibernate.Criterion.ProjectionsExtensions.AsEntity``1(``0)">
+            <summary>
+            Project Entity
             </summary>
         </member>
         <member name="T:NHibernate.Criterion.Property">
@@ -6353,9 +6483,14 @@
             </summary>
             <value>The appropriate <c>FOR UPDATE</c> clause string.</value>
         </member>
+        <member name="P:NHibernate.Dialect.Dialect.SupportsForUpdateOf">
+            <summary>Is <c>FOR UPDATE OF</c> syntax supported?</summary>
+            <value><see langword="true"/> if the database supports <c>FOR UPDATE OF</c> syntax; <see langword="false"/> otherwise. </value>
+        </member>
         <member name="P:NHibernate.Dialect.Dialect.ForUpdateOfColumns">
-            <summary> Is <tt>FOR UPDATE OF</tt> syntax supported? </summary>
-            <value> True if the database supports <tt>FOR UPDATE OF</tt> syntax; false otherwise. </value>
+            <summary>Is <c>FOR UPDATE OF</c> syntax expecting columns?</summary>
+            <value><see langword="true"/> if the database expects a column list with <c>FOR UPDATE OF</c> syntax,
+            <see langword="false"/> if it expects table alias instead or do not support <c>FOR UPDATE OF</c> syntax.</value>
         </member>
         <member name="P:NHibernate.Dialect.Dialect.SupportsOuterJoinForUpdate">
             <summary> 
@@ -6379,11 +6514,11 @@
         </member>
         <member name="M:NHibernate.Dialect.Dialect.GetForUpdateNowaitString(System.String)">
             <summary> 
-            Get the <tt>FOR UPDATE OF column_list NOWAIT</tt> fragment appropriate
-            for this dialect given the aliases of the columns to be write locked.
+            Get the <c>FOR UPDATE OF column_list NOWAIT</c> fragment appropriate
+            for this dialect given the aliases of the columns or tables to be write locked.
             </summary>
-            <param name="aliases">The columns to be write locked. </param>
-            <returns> The appropriate <tt>FOR UPDATE colunm_list NOWAIT</tt> clause string. </returns>
+            <param name="aliases">The columns or tables to be write locked.</param>
+            <returns>The appropriate <c>FOR UPDATE colunm_or_table_list NOWAIT</c> clause string.</returns>
         </member>
         <member name="M:NHibernate.Dialect.Dialect.ApplyLocksToSql(NHibernate.SqlCommand.SqlString,System.Collections.Generic.IDictionary{System.String,NHibernate.LockMode},System.Collections.Generic.IDictionary{System.String,System.String[]})">
             <summary> 
@@ -6528,6 +6663,48 @@
             The syntax that is used to close the if for a constraint exists check, used
             for dialects that requires begin/end for ifs
             </summary>
+            <param name="table">The table.</param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.GetIfNotExistsCreateConstraint(System.String,System.String,System.String,System.String)">
+            <summary>
+            The syntax that is used to check if a constraint does not exists before creating it
+            </summary>
+            <param name="catalog">The catalog.</param>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.GetIfNotExistsCreateConstraintEnd(System.String,System.String,System.String,System.String)">
+            <summary>
+            The syntax that is used to close the if for a constraint exists check, used
+            for dialects that requires begin/end for ifs
+            </summary>
+            <param name="catalog">The catalog.</param>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.GetIfExistsDropConstraint(System.String,System.String,System.String,System.String)">
+            <summary>
+            The syntax that is used to check if a constraint exists before dropping it
+            </summary>
+            <param name="catalog">The catalog.</param>
+            <param name="schema">The schema.</param>
+            <param name="table">The table.</param>
+            <param name="name">The name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.GetIfExistsDropConstraintEnd(System.String,System.String,System.String,System.String)">
+            <summary>
+            The syntax that is used to close the if for a constraint exists check, used
+            for dialects that requires begin/end for ifs
+            </summary>
+            <param name="catalog">The catalog.</param>
+            <param name="schema">The schema.</param>
             <param name="table">The table.</param>
             <param name="name">The name.</param>
             <returns></returns>
@@ -6978,6 +7155,21 @@
             </p>
             </remarks>
         </member>
+        <member name="M:NHibernate.Dialect.Dialect.QuoteForCatalogName(System.String)">
+            <summary>
+            Quotes a name for being used as a catalogname
+            </summary>
+            <param name="catalogName">Name of the catalog</param>
+            <returns>A Quoted name in the format of OpenQuote + catalogName + CloseQuote</returns>
+            <remarks>
+            <p>
+            If the catalogName is already enclosed in the OpenQuote and CloseQuote then this 
+            method will return the catalogName that was passed in without going through any
+            Quoting process.  So if catalogName is passed in already Quoted make sure that 
+            you have escaped all of the chars according to your DataBase's specifications.
+            </p>
+            </remarks>
+        </member>
         <member name="M:NHibernate.Dialect.Dialect.UnQuote(System.String)">
             <summary>
             Unquotes and unescapes an already quoted name
@@ -7018,6 +7210,41 @@
             it should not need to be overridden - only UnQuote(string) needs
             to be overridden unless this implementation is not sufficient.
             </remarks>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.ConvertQuotesForAliasName(System.String)">
+            <summary>
+            Convert back-tilt quotes in a name for being used as an aliasname.
+            </summary>
+            <param name="aliasName">Name of the alias.</param>
+            <returns>A name with back-tilt quotes converted if any.</returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.ConvertQuotesForColumnName(System.String)">
+            <summary>
+            Convert back-tilt quotes in a name for being used as a columnname.
+            </summary>
+            <param name="columnName">Name of the column.</param>
+            <returns>A name with back-tilt quotes converted if any.</returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.ConvertQuotesForTableName(System.String)">
+            <summary>
+            Convert back-tilt quotes in a name for being used as a tablename.
+            </summary>
+            <param name="tableName">Name of the table.</param>
+            <returns>A name with back-tilt quotes converted if any.</returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.ConvertQuotesForSchemaName(System.String)">
+            <summary>
+            Convert back-tilt quotes in a name for being used as a schemaname.
+            </summary>
+            <param name="schemaName">Name of the schema.</param>
+            <returns>A name with back-tilt quotes converted if any.</returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Dialect.ConvertQuotesForCatalogName(System.String)">
+            <summary>
+            Convert back-tilt quotes in a name for being used as a catalogname.
+            </summary>
+            <param name="catalogName">Name of the catalog.</param>
+            <returns>A name with back-tilt quotes converted if any.</returns>
         </member>
         <member name="M:NHibernate.Dialect.Dialect.GetSelectClauseNullString(NHibernate.SqlTypes.SqlType)">
             <summary> 
@@ -7361,6 +7588,16 @@
             The maximum length a SQL alias can have.
             </summary>
         </member>
+        <member name="P:NHibernate.Dialect.Dialect.MaxNumberOfParameters">
+            <summary>
+            The maximum number of parameters allowed in a query.
+            </summary>
+        </member>
+        <member name="P:NHibernate.Dialect.Dialect.StatementTerminator">
+            <summary>
+            The character used to terminate a SQL statement.
+            </summary>
+        </member>
         <member name="P:NHibernate.Dialect.Dialect.AddColumnString">
             <summary>
             The syntax used to add a column to a table. Note this is deprecated
@@ -7467,8 +7704,7 @@
             <summary></summary>
         </member>
         <member name="P:NHibernate.Dialect.InformixDialect.ForUpdateOfColumns">
-            <summary> Is <tt>FOR UPDATE OF</tt> syntax supported? </summary>
-            <value> True if the database supports <tt>FOR UPDATE OF</tt> syntax; false otherwise. </value>
+            <inheritdoc />
         </member>
         <member name="P:NHibernate.Dialect.InformixDialect.SupportsOuterJoinForUpdate">
             <summary> 
@@ -8239,6 +8475,11 @@
             Emulation of locate() on PostgreSQL
             </summary>
         </member>
+        <member name="M:NHibernate.Dialect.Function.SQLFunctionRegistry.FindSQLFunction(System.String)">
+            <summary>
+            Find function by function name ignoring case
+            </summary>
+        </member>
         <member name="T:NHibernate.Dialect.Function.SQLFunctionTemplate">
             <summary>
             Represents HQL functions that can have different representations in different SQL dialects.
@@ -8304,6 +8545,25 @@
             </summary>
             <param name="name">SQL function name.</param>
             <param name="typeValue">Return type for the function.</param>
+        </member>
+        <member name="T:NHibernate.Dialect.Function.StandardSQLFunctionWithRequiredParameters">
+            <summary>
+            A SQL function which substitutes required missing parameters with defaults.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Dialect.Function.StandardSQLFunctionWithRequiredParameters.#ctor(System.String,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Dialect.Function.StandardSQLFunctionWithRequiredParameters.#ctor(System.String,NHibernate.Type.IType,System.Object[])">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Dialect.Function.StandardSQLFunctionWithRequiredParameters.Render(System.Collections.IList,NHibernate.Engine.ISessionFactoryImplementor)">
+            <inheritdoc />
+        </member>
+        <member name="T:NHibernate.Dialect.Function.TransparentCastFunction">
+            <summary>
+            A HQL only cast for helping HQL knowing the type. Does not generates any actual cast in SQL code.
+            </summary>
         </member>
         <member name="T:NHibernate.Dialect.Function.VarArgsSQLFunction">
             <summary>
@@ -8464,6 +8724,21 @@
             Does this Dialect support an offset?
             </summary>
         </member>
+        <member name="P:NHibernate.Dialect.Ingres9Dialect.SupportsSequences">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.Ingres9Dialect.SupportsPooledSequences">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.Ingres9Dialect.QuerySequencesString">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.Ingres9Dialect.IdentityStyleIdentifierGeneratorClass">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.Ingres9Dialect.NativeIdentifierGeneratorClass">
+            <inheritdoc />
+        </member>
         <member name="M:NHibernate.Dialect.Ingres9Dialect.GetLimitString(NHibernate.SqlCommand.SqlString,NHibernate.SqlCommand.SqlString,NHibernate.SqlCommand.SqlString)">
             <summary>
             Attempts to add a <c>LIMIT</c> clause to the given SQL <c>SELECT</c>.
@@ -8477,6 +8752,18 @@
             if <paramref name="queryString"/> represents a SQL statement to which a limit clause cannot be added,
             for example when the query string is custom SQL invoking a stored procedure.
             </returns>
+        </member>
+        <member name="M:NHibernate.Dialect.Ingres9Dialect.GetSequenceNextValString(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Dialect.Ingres9Dialect.GetSelectSequenceNextValString(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Dialect.Ingres9Dialect.GetCreateSequenceString(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Dialect.Ingres9Dialect.GetDropSequenceString(System.String)">
+            <inheritdoc />
         </member>
         <member name="T:NHibernate.Dialect.IngresDialect">
             <summary>
@@ -8574,8 +8861,28 @@
             is an OpenQuote.
             </remarks>
         </member>
+        <member name="M:NHibernate.Dialect.MsSql2000Dialect.GetSelectExistingObject(System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns a string containing the query to check if an object exists
+            </summary>
+            <param name="catalog">The catalong name</param>
+            <param name="schema">The schema name</param>
+            <param name="table">The table name</param>
+            <param name="name">The name of the object</param>
+            <returns></returns>
+        </member>
         <member name="P:NHibernate.Dialect.MsSql2000Dialect.MaxAliasLength">
             <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.MsSql2000Dialect.MaxNumberOfParameters">
+            <summary>
+            On SQL Server there is a limit of 2100 parameters, but two are reserved for sp_executesql
+            and three for sp_prepexec (used when preparing is enabled). Set the number to 2097
+            as the worst case scenario.
+            </summary>
+        </member>
+        <member name="F:NHibernate.Dialect.MsSql2005Dialect.MaxSizeForXml">
+            <remarks>http://stackoverflow.com/a/7264795/259946</remarks>
         </member>
         <member name="P:NHibernate.Dialect.MsSql2005Dialect.SupportsLimit">
             <summary>
@@ -9027,6 +9334,12 @@
             syntax, but I don't think we need to bother for such ancient releases (considered EOL).
             </summary>
         </member>
+        <member name="P:NHibernate.Dialect.PostgreSQLDialect.SupportsForUpdateOf">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Dialect.PostgreSQLDialect.SupportsOuterJoinForUpdate">
+            <inheritdoc />
+        </member>
         <member name="P:NHibernate.Dialect.PostgreSQLDialect.SupportsUnionAll">
             <summary>PostgreSQL supports UNION ALL clause</summary>
             <remarks>
@@ -9215,6 +9528,17 @@
             </summary>
             <remarks>
             As documented at https://www.sqlite.org/faq.html#q5
+            </remarks>
+        </member>
+        <member name="P:NHibernate.Dialect.SQLiteDialect.SupportsDistributedTransactions">
+            <summary>
+            Does this dialect supports distributed transaction? <c>false</c>.
+            </summary>
+            <remarks>
+            SQLite does not have a two phases commit and as such does not respect distributed transaction semantic.
+            But moreover, it fails handling the threading involved with distributed transactions (see
+            https://system.data.sqlite.org/index.html/tktview/5cee5409f84da5f62172 ).
+            It has moreover some flakyness in tests due to seemingly highly delayed (> 500ms) commits when distributed. 
             </remarks>
         </member>
         <member name="P:NHibernate.Dialect.SQLiteDialect.MaxAliasLength">
@@ -9448,6 +9772,21 @@
             <summary>
             Datareader wrapper with the same life cycle of its command (through the batcher)
             </summary>
+        </member>
+        <member name="M:NHibernate.Driver.IResultSetsCommand.GetReaderAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Get a data reader for this multiple result sets command.
+            </summary>
+            <param name="commandTimeout">The timeout in seconds for the underlying ADO.NET query.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
+            <returns>A data reader.</returns>
+        </member>
+        <member name="M:NHibernate.Driver.IResultSetsCommand.GetReader(System.Nullable{System.Int32})">
+            <summary>
+            Get a data reader for this multiple result sets command.
+            </summary>
+            <param name="commandTimeout">The timeout in seconds for the underlying ADO.NET query.</param>
+            <returns>A data reader.</returns>
         </member>
         <member name="T:NHibernate.Driver.NDataReader">
             <summary>
@@ -10076,7 +10415,7 @@
         </member>
         <member name="M:NHibernate.Driver.DB2400Driver.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:NHibernate.Driver.DB2Driver"/> class.
+            Initializes a new instance of the <see cref="T:NHibernate.Driver.DB2400Driver"/> class.
             </summary>
             <exception cref="T:NHibernate.HibernateException">
             Thrown when the <c>IBM.Data.DB2.iSeries</c> assembly can not be loaded.
@@ -10557,6 +10896,11 @@
             Thrown when the <c>Npgsql</c> assembly can not be loaded.
             </exception>
         </member>
+        <member name="P:NHibernate.Driver.NpgsqlDriver.SupportsPreparingCommands">
+            <remarks>
+            NH-2267 Patrick Earl
+            </remarks>
+        </member>
         <member name="T:NHibernate.Driver.OdbcDriver">
             <summary>
             A NHibernate Driver for using the Odbc DataProvider
@@ -10712,7 +11056,6 @@
             <param name="driverAssemblyName">Assembly to load the types from.</param>
             <param name="connectionTypeName">Connection type name.</param>
             <param name="commandTypeName">Command type name.</param>
-            <seealso cref="M:System.Data.Common.DbProviderFactories.GetFactory(System.String)"/>
         </member>
         <member name="P:NHibernate.Driver.Sql2008ClientDriver.MinDate">
             <inheritdoc />
@@ -10721,6 +11064,9 @@
             <summary>
             A NHibernate Driver for using the SqlClient DataProvider
             </summary>
+        </member>
+        <member name="F:NHibernate.Driver.SqlClientDriver.MaxSizeForXml">
+            <remarks>http://stackoverflow.com/a/7264795/259946</remarks>
         </member>
         <member name="M:NHibernate.Driver.SqlClientDriver.CreateConnection">
             <summary>
@@ -11068,13 +11414,12 @@
         </member>
         <member name="F:NHibernate.Engine.BatchFetchQueue.batchLoadableEntityKeys">
             <summary>
-            Defines a sequence of <see cref="T:NHibernate.Engine.EntityKey" /> elements that are currently
-            eligible for batch fetching.
+            Used to hold information about the entities that are currently eligible for batch-fetching.  Ultimately
+            used by <see cref="M:NHibernate.Engine.BatchFetchQueue.GetEntityBatch(NHibernate.Persister.Entity.IEntityPersister,System.Object,System.Int32)" /> to build entity load batches.
             </summary>
             <remarks>
-            Even though this is a map, we only use the keys.  A map was chosen in
-            order to utilize a <see cref="T:NHibernate.Util.LinkedHashMap`2" /> to maintain sequencing
-            as well as uniqueness.
+            A Map structure is used to segment the keys by entity type since loading can only be done for a particular entity
+            type at a time.
             </remarks>
         </member>
         <member name="F:NHibernate.Engine.BatchFetchQueue.subselectsByEntityKey">
@@ -11150,6 +11495,22 @@
             need to batch fetch it anymore, remove it from the queue
             if necessary
             </summary>
+        </member>
+        <member name="M:NHibernate.Engine.BatchFetchQueue.AddBatchLoadableCollection(NHibernate.Collection.IPersistentCollection,NHibernate.Engine.CollectionEntry)">
+            <summary>
+            If a CollectionEntry represents a batch loadable collection, add
+            it to the queue.
+            </summary>
+            <param name="collection"></param>
+            <param name="ce"></param>
+        </member>
+        <member name="M:NHibernate.Engine.BatchFetchQueue.RemoveBatchLoadableCollection(NHibernate.Engine.CollectionEntry)">
+            <summary>
+            After a collection was initialized or evicted, we don't
+            need to batch fetch it anymore, remove it from the queue
+            if necessary
+            </summary>
+            <param name="ce"></param>
         </member>
         <member name="M:NHibernate.Engine.BatchFetchQueue.GetCollectionBatch(NHibernate.Persister.Collection.ICollectionPersister,System.Object,System.Int32)">
             <summary>
@@ -11498,6 +11859,14 @@
             has been initialized.
             </summary>
             <param name="collection">The initialized <see cref="T:NHibernate.Collection.AbstractPersistentCollection"/> that this Entry is for.</param>
+        </member>
+        <member name="M:NHibernate.Engine.CollectionEntry.PostInitialize(NHibernate.Collection.IPersistentCollection,NHibernate.Engine.IPersistenceContext)">
+            <summary>
+            Updates the CollectionEntry to reflect that the <see cref="T:NHibernate.Collection.IPersistentCollection"/>
+            has been initialized.
+            </summary>
+            <param name="collection">The initialized <see cref="T:NHibernate.Collection.AbstractPersistentCollection"/> that this Entry is for.</param>
+            <param name="persistenceContext"></param>
         </member>
         <member name="M:NHibernate.Engine.CollectionEntry.PostFlush(NHibernate.Collection.IPersistentCollection)">
             <summary>
@@ -12655,8 +13024,16 @@
         </member>
         <member name="P:NHibernate.Engine.ISessionImplementor.IsConnected">
             <summary>
-            Is the <c>ISession</c> currently connected?
+            Is the session connected?
             </summary>
+            <value>
+            <see langword="true" /> if the session is connected.
+            </value>
+            <remarks>
+            A session is considered connected if there is a <see cref="T:System.Data.Common.DbConnection"/> (regardless
+            of its state) or if the field <c>connect</c> is true. Meaning that it will connect
+            at the next operation that requires a connection.
+            </remarks>
         </member>
         <member name="M:NHibernate.Engine.ISessionImplementor.BestGuessEntityName(System.Object)">
             <summary> The best guess entity name for an entity not in an association</summary>
@@ -14345,10 +14722,10 @@
         </member>
         <member name="P:NHibernate.Engine.RowSelection.Timeout">
             <summary>
-            Gets or Sets the Timeout of the Query
+            The timeout in seconds for the underlying ADO.NET query.
             </summary>
-            <value>The Query Timeout</value>
-            <remarks>Defaults to NoValue unless specifically set.</remarks>
+            <value>The query timeout in seconds.</value>
+            <remarks>Defaults to <see cref="F:NHibernate.Engine.RowSelection.NoValue" /> unless specifically set.</remarks>
         </member>
         <member name="T:NHibernate.Engine.Status">
             <summary>
@@ -17853,6 +18230,19 @@
             Ported by: Steve Strong
             </summary>
         </member>
+        <member name="M:NHibernate.Hql.Ast.HqlTreeBuilder.TransparentCast(NHibernate.Hql.Ast.HqlExpression,System.Type)">
+            <summary>
+            Generate a cast node intended solely to hint HQL at the resulting type, without issuing an actual SQL cast.
+            </summary>
+            <param name="expression">The expression to cast.</param>
+            <param name="type">The resulting type.</param>
+            <returns>A <see cref="T:NHibernate.Hql.Ast.HqlTransparentCast"/> node.</returns>
+        </member>
+        <member name="T:NHibernate.Hql.Ast.HqlTransparentCast">
+            <summary>
+            Cast node intended solely to hint HQL at the resulting type, without issuing an actual SQL cast.
+            </summary>
+        </member>
         <member name="T:NHibernate.Hql.IQueryTranslator">
             <summary>
             Defines the contract of an HQL->SQL translator.
@@ -18308,10 +18698,10 @@
         </member>
         <member name="M:NHibernate.ICriteria.SetTimeout(System.Int32)">
             <summary>
-            Set a timeout for the underlying ADO.NET query
+            Set a timeout for the underlying ADO.NET query.
             </summary>
-            <param name="timeout"></param>
-            <returns></returns>
+            <param name="timeout">The timeout in seconds.</param>
+            <returns><see langword="this" /> (for method chaining).</returns>
         </member>
         <member name="M:NHibernate.ICriteria.SetCacheable(System.Boolean)">
             <summary>
@@ -20181,6 +20571,21 @@
         <member name="T:NHibernate.Impl.AbstractSessionImpl">
             <summary> Functionality common to stateless and stateful sessions </summary>
         </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.Transaction">
+            <summary>Get the current NHibernate transaction.</summary>
+        </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.Batcher">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.ConnectionManager">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.IsConnected">
+            <inheritdoc />
+        </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.Connection">
+            <inheritdoc />
+        </member>
         <member name="M:NHibernate.Impl.AbstractSessionImpl.BeginProcess">
             <summary>
             If not nested in another call to <c>BeginProcess</c> on this session, check and update the
@@ -20199,6 +20604,22 @@
             If not already processing, an object to dispose for restoring the previous session id.
             Otherwise, <see langword="null" />.
             </returns>
+        </member>
+        <member name="P:NHibernate.Impl.AbstractSessionImpl.TransactionInProgress">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Impl.AbstractSessionImpl.BeginTransaction">
+            <summary>
+            Begin a NHibernate transaction
+            </summary>
+            <returns>A NHibernate transaction</returns>
+        </member>
+        <member name="M:NHibernate.Impl.AbstractSessionImpl.BeginTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Begin a NHibernate transaction with the specified isolation level
+            </summary>
+            <param name="isolationLevel">The isolation level</param>
+            <returns>A NHibernate transaction</returns>
         </member>
         <member name="M:NHibernate.Impl.AbstractSessionImpl.Query``1">
             <summary>
@@ -20223,6 +20644,16 @@
         <member name="T:NHibernate.Impl.CriteriaImpl">
             <summary>
             Implementation of the <see cref="T:NHibernate.ICriteria"/> interface
+            </summary>
+        </member>
+        <member name="P:NHibernate.Impl.CriteriaImpl.Subcriteria.JoinEntityName">
+            <summary>
+            Entity name for "Entity Join" - join for entity with not mapped association
+            </summary>
+        </member>
+        <member name="P:NHibernate.Impl.CriteriaImpl.Subcriteria.IsEntityJoin">
+            <summary>
+            Is this an Entity join for not mapped association
             </summary>
         </member>
         <member name="M:NHibernate.Impl.CriteriaImpl.Subcriteria.SetCacheMode(NHibernate.CacheMode)">
@@ -20256,6 +20687,13 @@
             </summary>
             <param name="session">The session.</param>
             <param name="factory">The factory.</param>
+        </member>
+        <member name="M:NHibernate.Impl.MultiCriteriaImpl.SetTimeout(System.Int32)">
+            <summary>
+            Set a timeout for the underlying ADO.NET query.
+            </summary>
+            <param name="timeout">The timeout in seconds.</param>
+            <returns><see langword="this" /> (for method chaining).</returns>
         </member>
         <member name="M:NHibernate.Impl.MultiQueryImpl.ListAsync(System.Threading.CancellationToken)">
             <summary>
@@ -20568,9 +21006,6 @@
             <param name="factory">The factory from which this session was obtained.</param>
             <param name="options">The options of the session.</param>
         </member>
-        <member name="P:NHibernate.Impl.SessionImpl.Batcher">
-            <summary></summary>
-        </member>
         <member name="M:NHibernate.Impl.SessionImpl.Close">
             <summary>
             Close the session and release all resources
@@ -20740,19 +21175,6 @@
             <param name="collection"></param>
             <param name="writing"></param>
         </member>
-        <member name="P:NHibernate.Impl.SessionImpl.IsConnected">
-            <summary>
-            Gets if the ISession is connected.
-            </summary>
-            <value>
-            <see langword="true" /> if the ISession is connected.
-            </value>
-            <remarks>
-            An ISession is considered connected if there is an <see cref="T:System.Data.Common.DbConnection"/> (regardless
-            of its state) or if it the field <c>connect</c> is true.  Meaning that it will connect
-            at the next operation that requires a connection.
-            </remarks>
-        </member>
         <member name="M:NHibernate.Impl.SessionImpl.Disconnect">
             <summary></summary>
         </member>
@@ -20910,9 +21332,6 @@
             <param name="lockMode">The LockMode to be applied. </param>
             <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
         </member>
-        <member name="P:NHibernate.Impl.StatelessSessionImpl.Transaction">
-            <summary> Get the current Hibernate transaction.</summary>
-        </member>
         <member name="M:NHibernate.Impl.StatelessSessionImpl.GetSessionImplementation">
             <summary>
             Gets the stateless session implementation.
@@ -21044,19 +21463,6 @@
             <param name="alias">The alias of the entity</param>
             <returns> The <see cref="T:NHibernate.ICriteria"/>. </returns>
             <remarks>Entities returned by the query are detached.</remarks>
-        </member>
-        <member name="M:NHibernate.Impl.StatelessSessionImpl.BeginTransaction">
-            <summary>
-            Begin a NHibernate transaction
-            </summary>
-            <returns>A NHibernate transaction</returns>
-        </member>
-        <member name="M:NHibernate.Impl.StatelessSessionImpl.BeginTransaction(System.Data.IsolationLevel)">
-            <summary>
-            Begin a NHibernate transaction with the specified isolation level
-            </summary>
-            <param name="isolationLevel">The isolation level</param>
-            <returns>A NHibernate transaction</returns>
         </member>
         <member name="M:NHibernate.Impl.StatelessSessionImpl.Finalize">
             <summary>
@@ -21302,7 +21708,7 @@
         <member name="M:NHibernate.Impl.ExpressionProcessor.ProjectionInfo.AsProperty">
             <summary>
             Retrieve the property name from a supplied PropertyProjection
-            Note:  throws is the supplied IProjection is not a PropertyProjection
+            Note:  throws if the supplied IProjection is not a PropertyProjection
             </summary>
         </member>
         <member name="M:NHibernate.Impl.ExpressionProcessor.FindValue(System.Linq.Expressions.Expression)">
@@ -21511,6 +21917,7 @@
             some part of the "transaction context" of another Session.
             </summary>
             <seealso cref="T:NHibernate.ISharedSessionBuilder"/>
+            <seealso cref="T:NHibernate.ISharedStatelessSessionBuilder"/>
         </member>
         <member name="T:NHibernate.Impl.MessageHelper">
             <summary>
@@ -22019,9 +22426,9 @@
         </member>
         <member name="M:NHibernate.IMultiQuery.SetTimeout(System.Int32)">
             <summary>
-            The timeout for the underlying ADO query
+            Set a timeout for the underlying ADO.NET query.
             </summary>
-            <param name="timeout"></param>
+            <param name="timeout">The timeout in seconds.</param>
             <returns>The instance for method chain.</returns>
         </member>
         <member name="M:NHibernate.IMultiQuery.SetParameter(System.String,System.Object,NHibernate.Type.IType)">
@@ -22537,9 +22944,10 @@
         </member>
         <member name="M:NHibernate.IQuery.SetTimeout(System.Int32)">
             <summary>
-            The timeout for the underlying ADO query
+            Set a timeout for the underlying ADO.NET query.
             </summary>
-            <param name="timeout"></param>
+            <param name="timeout">The timeout in seconds.</param>
+            <returns><see langword="this" /> (for method chaining).</returns>
         </member>
         <member name="M:NHibernate.IQuery.SetFetchSize(System.Int32)">
             <summary> Set a fetch size for the underlying ADO query.</summary>
@@ -23230,9 +23638,25 @@
             <summary>
             Does this <c>ISession</c> contain any changes which must be
             synchronized with the database? Would any SQL be executed if
-            we flushed this session?
+            we flushed this session? May trigger save cascades, which could
+            cause themselves some SQL to be executed, especially if the
+            <c>identity</c> id generator is used.
             </summary>
             <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
+            <remarks>
+            <para>
+            The default implementation first checks if it contains saved or deleted entities to be flushed. If not, it
+            then delegate the check to its <see cref="T:NHibernate.Event.IDirtyCheckEventListener" />, which by default is
+            <see cref="T:NHibernate.Event.Default.DefaultDirtyCheckEventListener" />.
+            </para>
+            <para>
+            <see cref="T:NHibernate.Event.Default.DefaultDirtyCheckEventListener" /> replicates all the beginning of the flush process, checking
+            dirtiness of entities loaded in the session and triggering their pending cascade operations in order to
+            detect new and removed children. This can have the side effect of performing the <see cref="M:NHibernate.ISession.Save(System.Object)"/>
+            of children, causing their id to be generated. Depending on their id generator, this can trigger calls to
+            the database and even actually insert them if using an <c>identity</c> generator.
+            </para>
+            </remarks>
         </member>
         <member name="M:NHibernate.ISession.EvictAsync(System.Object,System.Threading.CancellationToken)">
             <summary>
@@ -23843,15 +24267,39 @@
         </member>
         <member name="P:NHibernate.ISession.IsConnected">
             <summary>
-            Is the <c>ISession</c> currently connected?
+            Is the session connected?
             </summary>
+            <value>
+            <see langword="true" /> if the session is connected.
+            </value>
+            <remarks>
+            A session is considered connected if there is a <see cref="T:System.Data.Common.DbConnection"/> (regardless
+            of its state) or if the field <c>connect</c> is true. Meaning that it will connect
+            at the next operation that requires a connection.
+            </remarks>
         </member>
         <member name="M:NHibernate.ISession.IsDirty">
             <summary>
             Does this <c>ISession</c> contain any changes which must be
             synchronized with the database? Would any SQL be executed if
-            we flushed this session?
+            we flushed this session? May trigger save cascades, which could
+            cause themselves some SQL to be executed, especially if the
+            <c>identity</c> id generator is used.
             </summary>
+            <remarks>
+            <para>
+            The default implementation first checks if it contains saved or deleted entities to be flushed. If not, it
+            then delegate the check to its <see cref="T:NHibernate.Event.IDirtyCheckEventListener" />, which by default is
+            <see cref="T:NHibernate.Event.Default.DefaultDirtyCheckEventListener" />.
+            </para>
+            <para>
+            <see cref="T:NHibernate.Event.Default.DefaultDirtyCheckEventListener" /> replicates all the beginning of the flush process, checking
+            dirtiness of entities loaded in the session and triggering their pending cascade operations in order to
+            detect new and removed children. This can have the side effect of performing the <see cref="M:NHibernate.ISession.Save(System.Object)"/>
+            of children, causing their id to be generated. Depending on their id generator, this can trigger calls to
+            the database and even actually insert them if using an <c>identity</c> generator.
+            </para>
+            </remarks>
         </member>
         <member name="M:NHibernate.ISession.IsReadOnly(System.Object)">
             <summary>
@@ -25064,8 +25512,16 @@
         </member>
         <member name="P:NHibernate.IStatelessSession.IsConnected">
             <summary>
-            Is the <c>IStatelessSession</c> currently connected?
+            Is the session connected?
             </summary>
+            <value>
+            <see langword="true" /> if the session is connected.
+            </value>
+            <remarks>
+            A session is considered connected if there is a <see cref="T:System.Data.Common.DbConnection"/> (regardless
+            of its state) or if the field <c>connect</c> is true. Meaning that it will connect
+            at the next operation that requires a connection.
+            </remarks>
         </member>
         <member name="M:NHibernate.IStatelessSession.GetSessionImplementation">
             <summary>
@@ -25830,6 +26286,18 @@
                 clause, and those expressions will be replaced with what the delegate returns.
             </param>
         </member>
+        <member name="T:NHibernate.Linq.IQueryProviderWithOptions">
+            <summary>
+            The extended <see cref="T:System.Linq.IQueryProvider" /> that supports setting options for underlying <see cref="T:NHibernate.IQuery" />.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Linq.IQueryProviderWithOptions.WithOptions(System.Action{NHibernate.Linq.NhQueryableOptions})">
+            <summary>
+            Creates a copy of a current provider with set query options.
+            </summary>
+            <param name="setOptions">An options setter.</param>
+            <returns>A new <see cref="T:System.Linq.IQueryProvider"/> with options.</returns>
+        </member>
         <member name="M:NHibernate.Linq.DmlExpressionRewriter.ConvertAssignmentsToDictionaryExpression``1(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Linq.Expressions.Expression})">
             <summary>
                 Converts the assignments into a lambda expression, which creates a Dictionary&lt;string,object%gt;.
@@ -26196,10 +26664,10 @@
         </member>
         <member name="M:NHibernate.Linq.IQueryableOptions.SetTimeout(System.Int32)">
             <summary>
-            The timeout for the underlying ADO query.
+            Set a timeout for the underlying ADO.NET query.
             </summary>
             <param name="timeout">The timeout in seconds.</param>
-            <returns><see langword="this"/> (for method chaining).</returns>
+            <returns><see langword="this" /> (for method chaining).</returns>
         </member>
         <member name="T:NHibernate.Linq.LinqExtensionMethodAttribute">
             <summary>
@@ -27100,7 +27568,16 @@
         </member>
         <member name="M:NHibernate.Linq.LinqExtensionMethods.SetOptions``1(System.Linq.IQueryable{``0},System.Action{NHibernate.Linq.IQueryableOptions})">
             <summary>
-            Allow to set NHibernate query options.
+            Allows to set NHibernate query options.
+            </summary>
+            <typeparam name="T">The type of the queried elements.</typeparam>
+            <param name="query">The query on which to set options.</param>
+            <param name="setOptions">The options setter.</param>
+            <returns>The query altered with the options.</returns>
+        </member>
+        <member name="M:NHibernate.Linq.LinqExtensionMethods.WithOptions``1(System.Linq.IQueryable{``0},System.Action{NHibernate.Linq.NhQueryableOptions})">
+            <summary>
+            Allows to set NHibernate query options.
             </summary>
             <typeparam name="T">The type of the queried elements.</typeparam>
             <param name="query">The query on which to set options.</param>
@@ -27147,6 +27624,83 @@
             <summary>
             Provides the main entry point to a LINQ query.
             </summary>
+        </member>
+        <member name="T:NHibernate.Linq.NhQueryableOptions">
+            <summary>
+            Expose NH queryable options.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.NHibernate#Linq#IQueryableOptions#SetCacheable(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.NHibernate#Linq#IQueryableOptions#SetCacheMode(NHibernate.CacheMode)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.NHibernate#Linq#IQueryableOptions#SetCacheRegion(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.NHibernate#Linq#IQueryableOptions#SetTimeout(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetCacheable(System.Boolean)">
+            <summary>
+            Enable caching of this query result set.
+            </summary>
+            <param name="cacheable">Should the query results be cacheable?</param>
+            <returns><see langword="this"/> (for method chaining).</returns>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetCacheMode(NHibernate.CacheMode)">
+            <summary>
+            Override the current session cache mode, just for this query.
+            </summary>
+            <param name="cacheMode">The cache mode to use.</param>
+            <returns><see langword="this"/> (for method chaining).</returns>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetCacheRegion(System.String)">
+            <summary>
+            Set the name of the cache region.
+            </summary>
+            <param name="cacheRegion">The name of a query cache region, or <see langword="null" />
+            for the default query cache</param>
+            <returns><see langword="this"/> (for method chaining).</returns>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetTimeout(System.Int32)">
+            <summary>
+            Set the timeout for the underlying ADO query.
+            </summary>
+            <param name="timeout">The timeout in seconds.</param>
+            <returns><see langword="this"/> (for method chaining).</returns>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetReadOnly(System.Boolean)">
+            <summary>
+            Set the read-only mode for entities (and proxies) loaded by this query. This setting 
+            overrides the default setting for the session (see <see cref="P:NHibernate.ISession.DefaultReadOnly" />).
+            </summary>
+            <remarks>
+            <para>
+            Read-only entities can be modified, but changes are not persisted. They are not 
+            dirty-checked and snapshots of persistent state are not maintained.
+            </para>
+            <para>
+            When a proxy is initialized, the loaded entity will have the same read-only setting 
+            as the uninitialized proxy, regardless of the session's current setting.
+            </para>
+            <para>
+            The read-only setting has no impact on entities or proxies returned by the criteria
+            that existed in the session before the criteria was executed.
+            </para>
+            </remarks>
+            <param name="readOnly">
+            If <c>true</c>, entities (and proxies) loaded by the query will be read-only.
+            </param>
+            <returns><c>this</c> (for method chaining)</returns>
+        </member>
+        <member name="M:NHibernate.Linq.NhQueryableOptions.SetComment(System.String)">
+            <summary> 
+            Set a comment that will be prepended before the generated SQL.
+            </summary>
+            <param name="comment">The comment to prepend.</param>
+            <returns><see langword="this"/> (for method chaining).</returns>
         </member>
         <member name="M:NHibernate.Linq.NhRelinqQueryParser.PreTransform(System.Linq.Expressions.Expression)">
             <summary>
@@ -27738,6 +28292,18 @@
             <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
             <returns>An DbDataReader advanced to the first record in RowSelection.</returns>
         </member>
+        <member name="M:NHibernate.Loader.Loader.GetResultSetAsync(System.Data.Common.DbCommand,NHibernate.Engine.QueryParameters,NHibernate.Engine.ISessionImplementor,NHibernate.Transform.IResultTransformer,System.Threading.CancellationToken)">
+            <summary>
+            Fetch a <c>DbCommand</c>, call <c>SetMaxRows</c> and then execute it,
+            advance to the first result and return an SQL <c>DbDataReader</c>
+            </summary>
+            <param name="st">The <see cref="T:System.Data.Common.DbCommand" /> to execute.</param>
+            <param name="queryParameters">The <see cref="T:NHibernate.Engine.QueryParameters"/>.</param>
+            <param name="session">The <see cref="T:NHibernate.ISession" /> to load in.</param>
+            <param name="forcedResultTransformer">The forced result transformer for the query.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
+            <returns>A DbDataReader advanced to the first record in RowSelection.</returns>
+        </member>
         <member name="M:NHibernate.Loader.Loader.LoadEntityAsync(NHibernate.Engine.ISessionImplementor,System.Object,NHibernate.Type.IType,System.Object,System.String,System.Object,NHibernate.Persister.Entity.IEntityPersister,System.Threading.CancellationToken)">
             <summary>
             Called by subclasses that load entities
@@ -27775,6 +28341,17 @@
             <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
             <returns></returns>
         </member>
+        <member name="M:NHibernate.Loader.Loader.ListAsync(NHibernate.Engine.ISessionImplementor,NHibernate.Engine.QueryParameters,System.Collections.Generic.ISet{System.String},System.Threading.CancellationToken)">
+            <summary>
+            Return the query results, using the query cache, called
+            by subclasses that implement cacheable queries
+            </summary>
+            <param name="session"></param>
+            <param name="queryParameters"></param>
+            <param name="querySpaces"></param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the work</param>
+            <returns></returns>
+        </member>
         <member name="M:NHibernate.Loader.Loader.DoListAsync(NHibernate.Engine.ISessionImplementor,NHibernate.Engine.QueryParameters,System.Threading.CancellationToken)">
             <summary>
             Actually execute a query, ignoring the query cache
@@ -27790,6 +28367,11 @@
             Even if a dialect generally supports the addition of limit and/or offset clauses to SQL statements,
             there may (custom) SQL statements where this is not possible, for example in case of SQL Server 
             stored procedure invocations.
+            </summary>
+        </member>
+        <member name="F:NHibernate.Loader.Loader._subclassEntityAliasesMap">
+            <summary>
+            Caches subclass entity aliases for given persister index in <see cref="P:NHibernate.Loader.Loader.EntityPersisters"/>  and subclass entity name
             </summary>
         </member>
         <member name="P:NHibernate.Loader.Loader.EntityEagerPropertyFetches">
@@ -27829,6 +28411,11 @@
         <member name="P:NHibernate.Loader.Loader.EntityAliases">
             <summary>
             Get the result set descriptor
+            </summary>
+        </member>
+        <member name="P:NHibernate.Loader.Loader.ResultTypes">
+            <summary>
+            The result types of the result set, for query loaders.
             </summary>
         </member>
         <member name="P:NHibernate.Loader.Loader.SqlString">
@@ -28066,6 +28653,17 @@
             <param name="callable"></param>
             <returns>An DbDataReader advanced to the first record in RowSelection.</returns>
         </member>
+        <member name="M:NHibernate.Loader.Loader.GetResultSet(System.Data.Common.DbCommand,NHibernate.Engine.QueryParameters,NHibernate.Engine.ISessionImplementor,NHibernate.Transform.IResultTransformer)">
+            <summary>
+            Fetch a <c>DbCommand</c>, call <c>SetMaxRows</c> and then execute it,
+            advance to the first result and return an SQL <c>DbDataReader</c>
+            </summary>
+            <param name="st">The <see cref="T:System.Data.Common.DbCommand" /> to execute.</param>
+            <param name="queryParameters">The <see cref="T:NHibernate.Engine.QueryParameters"/>.</param>
+            <param name="session">The <see cref="T:NHibernate.ISession" /> to load in.</param>
+            <param name="forcedResultTransformer">The forced result transformer for the query.</param>
+            <returns>A DbDataReader advanced to the first record in RowSelection.</returns>
+        </member>
         <member name="M:NHibernate.Loader.Loader.LoadEntity(NHibernate.Engine.ISessionImplementor,System.Object,NHibernate.Type.IType,System.Object,System.String,System.Object,NHibernate.Persister.Entity.IEntityPersister)">
             <summary>
             Called by subclasses that load entities
@@ -28100,6 +28698,16 @@
             <param name="queryParameters"></param>
             <param name="querySpaces"></param>
             <param name="resultTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NHibernate.Loader.Loader.List(NHibernate.Engine.ISessionImplementor,NHibernate.Engine.QueryParameters,System.Collections.Generic.ISet{System.String})">
+            <summary>
+            Return the query results, using the query cache, called
+            by subclasses that implement cacheable queries
+            </summary>
+            <param name="session"></param>
+            <param name="queryParameters"></param>
+            <param name="querySpaces"></param>
             <returns></returns>
         </member>
         <member name="M:NHibernate.Loader.Loader.DoList(NHibernate.Engine.ISessionImplementor,NHibernate.Engine.QueryParameters)">
@@ -28147,7 +28755,17 @@
         </member>
         <member name="M:NHibernate.Loader.DefaultEntityAliases.#ctor(System.Collections.Generic.IDictionary{System.String,System.String[]},NHibernate.Persister.Entity.ILoadable,System.String)">
             <summary>
-            Calculate and cache select-clause suffixes.
+            Calculate and cache select-clause aliases.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Loader.DefaultEntityAliases.GetSuffixedPropertyAliases(NHibernate.Persister.Entity.ILoadable)">
+            <summary>
+            Returns aliases for subclass persister
+            </summary>
+        </member>
+        <member name="M:NHibernate.Loader.DefaultEntityAliases.GetAllPropertyAliases(NHibernate.Persister.Entity.ILoadable)">
+            <summary>
+            Returns default aliases for all the properties
             </summary>
         </member>
         <member name="T:NHibernate.Loader.GeneratedCollectionAliases">
@@ -29006,6 +29624,11 @@
             extended by a "property path")
             </summary>
         </member>
+        <member name="M:NHibernate.Persister.Collection.AbstractCollectionPersister.GetBatchSize">
+            <summary>
+            Get the batch size of a collection persister.
+            </summary>
+        </member>
         <member name="M:NHibernate.Persister.Collection.AbstractCollectionPersister.PerformInsert(System.Object,NHibernate.Collection.IPersistentCollection,System.Object,System.Int32,NHibernate.Engine.ISessionImplementor)">
             <summary>
             Perform an SQL INSERT, and then retrieve a generated identifier.
@@ -29421,6 +30044,11 @@
         <member name="T:NHibernate.Persister.Collection.ElementPropertyMapping">
             <summary>
             Summary description for ElementPropertyMapping.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Persister.Collection.CollectionPersisterExtensions.GetBatchSize(NHibernate.Persister.Collection.ICollectionPersister)">
+            <summary>
+            Get the batch size of a collection persister.
             </summary>
         </member>
         <member name="T:NHibernate.Persister.Collection.IQueryableCollection">
@@ -31572,6 +32200,11 @@
             Represents a SQL <c>JOIN</c>
             </summary>
         </member>
+        <member name="M:NHibernate.SqlCommand.JoinFragment.AddBareCondition(NHibernate.SqlCommand.SqlStringBuilder,NHibernate.SqlCommand.SqlString)">
+            <summary>
+            Adds condition to buffer without adding " and " prefix. Existing " and" prefix is removed
+            </summary>
+        </member>
         <member name="T:NHibernate.SqlCommand.OracleJoinFragment">
             <summary>
             An Oracle-style (theta) Join
@@ -32430,6 +33063,11 @@
             The method performs case-insensitive comparison, so the <paramref name="text" />
             passed should be in lower case.
             </remarks>
+        </member>
+        <member name="M:NHibernate.SqlCommand.SqlString.IsEmptyOrWhitespace">
+            <summary>
+            Returns true if content is empty or white space characters only
+            </summary>
         </member>
         <member name="M:NHibernate.SqlCommand.SqlString.Trim">
             <summary>
@@ -36797,6 +37435,16 @@
             a reference to the IType.
             </remarks>
         </member>
+        <member name="M:NHibernate.Type.TypeFactory.RegisterType(System.Type,NHibernate.Type.IType,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            <para>Defines which NHibernate type should be chosen by default for handling a given .Net type.</para>
+            <para>This must be done before any operation on NHibernate, including building its
+            <see cref="T:NHibernate.Cfg.Configuration" /> and building session factory. Otherwise the behavior will be undefined.</para>
+            </summary>
+            <param name="systemType">The .Net type.</param>
+            <param name="nhibernateType">The NHibernate type.</param>
+            <param name="aliases">The additional aliases to map to the type. Use <see cref="F:NHibernate.Type.TypeFactory.EmptyAliases"/> if none.</param>
+        </member>
         <member name="M:NHibernate.Type.TypeFactory.#cctor">
             <summary></summary>
         </member>
@@ -36887,6 +37535,13 @@
             <param name="length">optionally, the size of the type</param>
             <returns></returns>
         </member>
+        <member name="M:NHibernate.Type.TypeFactory.GetDefaultTypeFor(System.Type)">
+            <summary>
+            Get the current default NHibernate type for a .Net type.
+            </summary>
+            <param name="type">The .Net type for which to get the corresponding default NHibernate type.</param>
+            <returns>The current default NHibernate type for a .Net type if any, otherwise <see langword="null" />.</returns>
+        </member>
         <member name="M:NHibernate.Type.TypeFactory.GetBinaryType(System.Int32)">
             <summary>
             Gets the BinaryType with the specified length.
@@ -36912,11 +37567,6 @@
             of <c>IType.Name</c> and <c>Type.AssemblyQualifiedName</c>.  This is different
             from the other items put in the basicNameMap because it is uses the AQN and the
             FQN as opposed to the short name used in the maps and the FQN.
-            </para>
-            <para>
-            Since this method calls the method
-            <see cref="M:NHibernate.Type.TypeFactory.GetSerializableType(System.Type,System.Int32)">GetSerializableType(System.Type, Int32)</see>
-            with the default length, those keys will also be added.
             </para>
             </remarks>
         </member>
@@ -37992,6 +38642,20 @@
             </summary>
              <seealso cref="T:NHibernate.Tool.hbm2ddl.SchemaUpdate"/>
         </member>
+        <member name="M:NHibernate.Cfg.Configuration.GetQuotedDefaultCatalog(NHibernate.Dialect.Dialect)">
+            <summary>
+            Returns the default catalog, quoted converted if needed.
+            </summary>
+            <param name="dialect">The instance of dialect to use</param>
+            <returns>The default catalog, with back-tilt quote converted if any.</returns>
+        </member>
+        <member name="M:NHibernate.Cfg.Configuration.GetQuotedDefaultSchema(NHibernate.Dialect.Dialect)">
+            <summary>
+            Returns the default catalog, quoted converted if needed.
+            </summary>
+            <param name="dialect">The instance of dialect to use</param>
+            <returns>The default catalog, with back-tilt quote converted if any.</returns>
+        </member>
         <member name="M:NHibernate.Cfg.ConfigurationExtensions.TypeDefinition``1(NHibernate.Cfg.Configuration,System.Action{NHibernate.Cfg.Loquacious.ITypeDefConfigurationProperties})">
              <summary>
              Add a type-definition for mappings.
@@ -38529,6 +39193,11 @@
             The class name of the LINQ query provider class, implementing <see cref="T:NHibernate.Linq.INhQueryProvider"/>.
             </summary>
         </member>
+        <member name="F:NHibernate.Cfg.Environment.CommandTimeout">
+            <summary>
+            Set the default timeout in seconds for ADO.NET queries.
+            </summary>
+        </member>
         <member name="F:NHibernate.Cfg.Environment.OrderInserts">
             <summary> Enable ordering of insert statements for the purpose of more efficient batching.</summary>
         </member>
@@ -38544,7 +39213,7 @@
         <member name="F:NHibernate.Cfg.Environment.QueryDefaultCastPrecision">
             <summary>
             Set the default precision used in casting when the target type is decimal and
-            does not specify it. <c>28</c> by default, automatically trimmed down according to dialect type registration.
+            does not specify it. <c>29</c> by default, automatically trimmed down according to dialect type registration.
             </summary>
         </member>
         <member name="F:NHibernate.Cfg.Environment.QueryDefaultCastScale">
@@ -38577,6 +39246,18 @@
             https://docs.oracle.com/database/121/ODPNT/featOraCommand.htm#i1007557
             This setting applies only to Oracle dialects and ODP.Net managed or unmanaged driver.
             </remarks>
+        </member>
+        <member name="F:NHibernate.Cfg.Environment.TrackSessionId">
+            <summary>
+            <para>Set whether tracking the session id or not. When <see langword="true"/>, each session 
+            will have an unique <see cref="T:System.Guid"/> that can be retrieved by <see cref="P:NHibernate.Engine.ISessionImplementor.SessionId"/>,
+            otherwise <see cref="P:NHibernate.Engine.ISessionImplementor.SessionId"/> will always be <see cref="F:System.Guid.Empty"/>. Session id 
+            is used for logging purpose that can be also retrieved in a static context by 
+            <see cref="P:NHibernate.Impl.SessionIdLoggingContext.SessionId"/>, where the current session id is stored,
+            when tracking is enabled.</para>
+            In case the current session id won't be used, it is recommended to disable it, in order to increase performance.
+            <para>Default is <see langword="true"/>.</para>
+            </summary>
         </member>
         <member name="M:NHibernate.Cfg.Environment.VerifyProperties(System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
@@ -38826,6 +39507,11 @@
             <typeparam name="TDialect">The dialect implementation inherited from <see cref="T:NHibernate.Dialect.Dialect"/>.</typeparam>
             <returns>The fluent configuration itself.</returns>
         </member>
+        <member name="P:NHibernate.Cfg.Loquacious.IDbIntegrationConfigurationProperties.Timeout">
+            <summary>
+            Set the default timeout in seconds for ADO.NET queries.
+            </summary>
+        </member>
         <member name="M:NHibernate.Cfg.Loquacious.IFluentSessionFactoryConfiguration.Named(System.String)">
             <summary>
             Set the SessionFactory mnemonic name.
@@ -38844,6 +39530,11 @@
         <member name="P:NHibernate.Cfg.Loquacious.IFluentSessionFactoryConfiguration.Caching">
             <summary>
             Cache configuration.
+            </summary>
+        </member>
+        <member name="P:NHibernate.Cfg.Loquacious.INamedQueryDefinitionBuilder.Timeout">
+            <summary>
+            The timeout in seconds for the underlying ADO.NET query.
             </summary>
         </member>
         <member name="T:NHibernate.Cfg.Loquacious.ITypeDefConfigurationProperties">
@@ -42407,16 +43098,6 @@
             Used to show a better debug display for dictionaries
             </summary>
         </member>
-        <member name="P:NHibernate.DuplicateMappingException.Type">
-            <summary>
-            The type of the duplicated object
-            </summary>
-        </member>
-        <member name="P:NHibernate.DuplicateMappingException.Name">
-            <summary>
-            The name of the duplicated object
-            </summary>
-        </member>
         <member name="M:NHibernate.DuplicateMappingException.#ctor(System.String,System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:NHibernate.MappingException"/> class.
@@ -42444,6 +43125,16 @@
             <param name="context">
             The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.
             </param>
+        </member>
+        <member name="P:NHibernate.DuplicateMappingException.Type">
+            <summary>
+            The type of the duplicated object
+            </summary>
+        </member>
+        <member name="P:NHibernate.DuplicateMappingException.Name">
+            <summary>
+            The name of the duplicated object
+            </summary>
         </member>
         <member name="T:NHibernate.EmptyInterceptor">
             <summary>
@@ -42519,6 +43210,56 @@
             <summary> For the given <see cref="T:System.Exception"/>, locates the <see cref="T:System.Data.Common.DbException"/>. </summary>
             <param name="sqlException">The exception from which to extract the <see cref="T:System.Data.Common.DbException"/> </param>
             <returns> The <see cref="T:System.Data.Common.DbException"/>, or null. </returns>
+        </member>
+        <member name="T:NHibernate.Exceptions.AggregateHibernateException">
+            <summary>
+            Exception aggregating exceptions that occurs in the O-R persistence layer.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.#ctor(System.Collections.Generic.IEnumerable{System.Exception})">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.Exceptions.AggregateHibernateException"/> class.
+            </summary>
+            <param name="innerExceptions">The exceptions to aggregate.</param>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.#ctor(System.Exception[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.Exceptions.AggregateHibernateException"/> class.
+            </summary>
+            <param name="innerExceptions">The exceptions to aggregate.</param>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.#ctor(System.String,System.Collections.Generic.IEnumerable{System.Exception})">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.HibernateException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerExceptions">The exceptions to aggregate.</param>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.#ctor(System.String,System.Exception[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.HibernateException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerExceptions">The exceptions to aggregate.</param>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.Exceptions.AggregateHibernateException"/> class
+            with serialized data.
+            </summary>
+            <param name="info">
+            The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized object
+            data about the exception being thrown.
+            </param>
+            <param name="context">
+            The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual information about the source or destination.
+            </param>
+        </member>
+        <member name="M:NHibernate.Exceptions.AggregateHibernateException.ToString">
+            <summary>
+            Return a string representation of the aggregate exception.
+            </summary>
+            <returns>A string representation with inner exceptions.</returns>
         </member>
         <member name="T:NHibernate.Exceptions.ConstraintViolationException">
             <summary> 
@@ -42949,9 +43690,10 @@
         </member>
         <member name="M:NHibernate.IDetachedQuery.SetTimeout(System.Int32)">
             <summary>
-            The timeout for the underlying ADO query
+            Set a timeout for the underlying ADO.NET query.
             </summary>
-            <param name="timeout"></param>
+            <param name="timeout">The timeout in seconds.</param>
+            <returns><see langword="this" /> (for method chaining).</returns>
         </member>
         <member name="M:NHibernate.IDetachedQuery.SetFetchSize(System.Int32)">
             <summary> Set a fetch size for the underlying ADO query.</summary>
@@ -43642,6 +44384,14 @@
             <seealso cref="M:NHibernate.ISessionFactory.OpenSession(NHibernate.IInterceptor)"/>
             <seealso cref="M:NHibernate.ISessionFactory.OpenSession(System.Data.Common.DbConnection,NHibernate.IInterceptor)"/>
         </member>
+        <member name="M:NHibernate.MultiCriteriaExtensions.SetTimeout(NHibernate.IMultiCriteria,System.Int32)">
+            <summary>
+            Set a timeout for the underlying ADO.NET query.
+            </summary>
+            <param name="timeout">The timeout in seconds.</param>
+            <param name="multiCriteria">The <see cref="T:NHibernate.IMultiCriteria" /> on which to set the timeout.</param>
+            <returns><paramref name="multiCriteria" /> (for method chaining).</returns>
+        </member>
         <member name="T:NHibernate.InstantiationException">
             <summary>
             Thrown if Hibernate can't instantiate an entity or component class at runtime.
@@ -44250,6 +45000,14 @@
             <param name="withClause">Additional criterion for the SQL on clause</param>
             <returns>criteria instance</returns>
         </member>
+        <member name="M:NHibernate.SessionExtensions.StatelessSessionWithOptions(NHibernate.ISession)">
+            <summary>
+            Obtain a <see cref="T:NHibernate.IStatelessSession"/> builder with the ability to grab certain information from
+            this session. The built <c>IStatelessSession</c> will require its own disposal.
+            </summary>
+            <param name="session">The session from which to build a stateless session.</param>
+            <returns>The session builder.</returns>
+        </member>
         <member name="T:NHibernate.ISessionBuilder">
             <summary>
             Represents a consolidation of all session creation options into a builder style delegate.
@@ -44368,6 +45126,50 @@
             <returns><see langword="this" />, for method chaining.</returns>
         </member>
         <member name="M:NHibernate.ISharedSessionBuilder.AutoJoinTransaction">
+            <summary>
+            Signifies that the AutoJoinTransaction flag from the original session should be used to create the new session.
+            </summary>
+            <returns><see langword="this" />, for method chaining.</returns>
+        </member>
+        <member name="T:NHibernate.ISharedStatelessSessionBuilder">
+            <summary>
+            Specialized <see cref="T:NHibernate.ISessionBuilder"/> with access to stuff from another session.
+            </summary>
+        </member>
+        <member name="M:NHibernate.ISharedStatelessSessionBuilder.Connection(System.Data.Common.DbConnection)">
+            <summary>
+            Adds a specific connection to the session options.
+            </summary>
+            <param name="connection">The connection to use.</param>
+            <returns><see langword="this" />, for method chaining.</returns>
+            <remarks>
+            Note that the second-level cache will be disabled if you
+            supply a ADO.NET connection. NHibernate will not be able to track
+            any statements you might have executed in the same transaction.
+            Consider implementing your own <see cref="T:NHibernate.Connection.IConnectionProvider" />.
+            </remarks>
+        </member>
+        <member name="M:NHibernate.ISharedStatelessSessionBuilder.AutoJoinTransaction(System.Boolean)">
+            <summary>
+            Should the session be automatically enlisted in ambient system transaction?
+            Enabled by default. Disabling it does not prevent connections having auto-enlistment
+            enabled to get enlisted in current ambient transaction when opened.
+            </summary>
+            <param name="autoJoinTransaction">Should the session be automatically explicitly
+            enlisted in ambient transaction.</param>
+            <returns><see langword="this" />, for method chaining.</returns>
+        </member>
+        <member name="M:NHibernate.ISharedStatelessSessionBuilder.Connection">
+            <summary>
+            Signifies that the connection from the original session should be used to create the new session.
+            The original session remains responsible for it and its closing will cause sharing sessions to be no
+            more usable.
+            Causes specified <c>ConnectionReleaseMode</c> and <c>AutoJoinTransaction</c> to be ignored and
+            replaced by those of the original session.
+            </summary>
+            <returns><see langword="this" />, for method chaining.</returns>
+        </member>
+        <member name="M:NHibernate.ISharedStatelessSessionBuilder.AutoJoinTransaction">
             <summary>
             Signifies that the AutoJoinTransaction flag from the original session should be used to create the new session.
             </summary>
@@ -44591,6 +45393,145 @@
             Similar to <see cref="F:NHibernate.LockMode.Upgrade"/> except that, for versioned entities,
             it results in a forced version increment.
             </summary>
+        </member>
+        <member name="M:NHibernate.INHibernateLogger.Log(NHibernate.NHibernateLogLevel,NHibernate.NHibernateLogValues,System.Exception)">
+            <summary>Writes a log entry.</summary>
+            <param name="logLevel">Entry will be written on this level.</param>
+            <param name="state">The entry to be written.</param>
+            <param name="exception">The exception related to this entry.</param>
+        </member>
+        <member name="M:NHibernate.INHibernateLogger.IsEnabled(NHibernate.NHibernateLogLevel)">
+            <summary>
+            Checks if the given <paramref name="logLevel" /> is enabled.
+            </summary>
+            <param name="logLevel">level to be checked.</param>
+            <returns><c>true</c> if enabled.</returns>
+        </member>
+        <member name="T:NHibernate.INHibernateLoggerFactory">
+            <summary>
+            Factory interface for providing a <see cref="T:NHibernate.INHibernateLogger"/>.
+            </summary>
+        </member>
+        <member name="M:NHibernate.INHibernateLoggerFactory.LoggerFor(System.String)">
+            <summary>
+            Get a logger for the given log key.
+            </summary>
+            <param name="keyName">The log key.</param>
+            <returns>A NHibernate logger.</returns>
+        </member>
+        <member name="M:NHibernate.INHibernateLoggerFactory.LoggerFor(System.Type)">
+            <summary>
+            Get a logger using the given type as log key.
+            </summary>
+            <param name="type">The type to use as log key.</param>
+            <returns>A NHibernate logger.</returns>
+        </member>
+        <member name="T:NHibernate.NHibernateLogger">
+            <summary>
+            Provide methods for getting NHibernate loggers according to supplied <see cref="T:NHibernate.INHibernateLoggerFactory"/>.
+            </summary>
+            <remarks>
+            By default, it will use a <see cref="T:NHibernate.Log4NetLoggerFactory"/> if log4net is available, otherwise it will
+            use a <see cref="T:NHibernate.NoLoggingNHibernateLoggerFactory"/>.
+            </remarks>
+        </member>
+        <member name="M:NHibernate.NHibernateLogger.SetLoggersFactory(NHibernate.INHibernateLoggerFactory)">
+            <summary>
+            Specify the logger factory to use for building loggers.
+            </summary>
+            <param name="loggerFactory">A logger factory.</param>
+        </member>
+        <member name="M:NHibernate.NHibernateLogger.For(System.String)">
+            <summary>
+            Get a logger for the given log key.
+            </summary>
+            <param name="keyName">The log key.</param>
+            <returns>A NHibernate logger.</returns>
+        </member>
+        <member name="M:NHibernate.NHibernateLogger.For(System.Type)">
+            <summary>
+            Get a logger using the given type as log key.
+            </summary>
+            <param name="type">The type to use as log key.</param>
+            <returns>A NHibernate logger.</returns>
+        </member>
+        <member name="M:NHibernate.NHibernateLogValues.#ctor(System.String,System.Object[])">
+            <summary>
+            Instantiates a new instance of the <see cref="T:NHibernate.NHibernateLogValues"/> structure.
+            </summary>
+            <param name="format">A composite format string</param>
+            <param name="args">An object array that contains zero or more objects to format.  Can be <c>null</c> if there are no values to format.</param>
+        </member>
+        <member name="P:NHibernate.NHibernateLogValues.Format">
+            <summary>
+            Returns the composite format string.
+            </summary>
+            <remarks>
+            A composite format string consists of zero or more runs of fixed text intermixed with
+            one or more format items, which are indicated by an index number delimited with brackets
+            (for example, {0}). The index of each format item corresponds to an argument in an object
+            list that follows the composite format string.
+            </remarks>
+        </member>
+        <member name="P:NHibernate.NHibernateLogValues.Args">
+            <summary>
+            An object array that contains zero or more objects to format.  Can be <c>null</c> if there are no values to format.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLogValues.ToString">
+            <summary>
+            Returns the string that results from formatting the composite format string along with
+            its arguments by using the formatting conventions of the current culture.
+            </summary>
+        </member>
+        <member name="T:NHibernate.NHibernateLogLevel">
+            <summary>Defines logging severity levels.</summary>
+        </member>
+        <member name="T:NHibernate.NHibernateLoggerExtensions">
+            <summary>
+            Extensions method for logging.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLoggerExtensions.Fatal(NHibernate.INHibernateLogger,System.String,System.Exception)">
+            <summary>
+            Throws NotImplementedException. Calling this method is an error. Please use methods taking the exception as first argument instead.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLoggerExtensions.Error(NHibernate.INHibernateLogger,System.String,System.Exception)">
+            <summary>
+            Throws NotImplementedException. Calling this method is an error. Please use methods taking the exception as first argument instead.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLoggerExtensions.Warn(NHibernate.INHibernateLogger,System.String,System.Exception)">
+            <summary>
+            Throws NotImplementedException. Calling this method is an error. Please use methods taking the exception as first argument instead.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLoggerExtensions.Info(NHibernate.INHibernateLogger,System.String,System.Exception)">
+            <summary>
+            Throws NotImplementedException. Calling this method is an error. Please use methods taking the exception as first argument instead.
+            </summary>
+        </member>
+        <member name="M:NHibernate.NHibernateLoggerExtensions.Debug(NHibernate.INHibernateLogger,System.String,System.Exception)">
+            <summary>
+            Throws NotImplementedException. Calling this method is an error. Please use methods taking the exception as first argument instead.
+            </summary>
+        </member>
+        <member name="T:NHibernate.Log4NetLoggerFactory">
+            <summary>
+            Reflection based log4net logger factory.
+            </summary>
+        </member>
+        <member name="T:NHibernate.Log4NetLogger">
+            <summary>
+            Reflection based log4net logger.
+            </summary>
+        </member>
+        <member name="M:NHibernate.Log4NetLogger.#ctor(System.Object)">
+            <summary>
+            Default constructor.
+            </summary>
+            <param name="logger">The <c>log4net.ILog</c> logger to use for logging.</param>
         </member>
         <member name="T:NHibernate.MappingException">
             <summary>
@@ -46796,6 +47737,7 @@
         <member name="P:NHibernate.Mapping.Table.UniqueInteger">
             <summary>
             Gets the unique number of the Table.
+            Used for SQL alias generation
             </summary>
             <value>The unique number of the Table.</value>
         </member>
@@ -46865,12 +47807,15 @@
         <member name="M:NHibernate.Mapping.Table.GetQuotedSchema">
             <summary> returns quoted name as it is in the mapping file.</summary>
         </member>
+        <member name="M:NHibernate.Mapping.Table.GetQuotedCatalog">
+            <summary> returns quoted name as it is in the mapping file.</summary>
+        </member>
         <member name="M:NHibernate.Mapping.Table.GetQuotedSchemaName(NHibernate.Dialect.Dialect)">
             <summary>
             Gets the schema for this table in quoted form if it is necessary.
             </summary>
             <param name="dialect">
-            The <see cref="T:NHibernate.Dialect.Dialect" /> that knows how to quote the table name.
+            The <see cref="T:NHibernate.Dialect.Dialect" /> that knows how to quote the schema name.
             </param>
             <returns>
             The schema name for this table in a form that is safe to use inside
@@ -48340,6 +49285,18 @@
             <param name="message">The message that describes the error. </param>
             <param name="queryString">The query that contains the error.</param>
         </member>
+        <member name="M:NHibernate.QueryException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.QueryException"/> class.
+            </summary>
+            <param name="message">The message that describes the error. </param>
+            <param name="queryString">The query that contains the error.</param>
+            <param name="innerException">
+            The exception that is the cause of the current exception. If the innerException parameter
+            is not a null reference, the current exception is raised in a catch block that handles
+            the inner exception.
+            </param>
+        </member>
         <member name="M:NHibernate.QueryException.#ctor(System.Exception)">
             <summary>
             Initializes a new instance of the <see cref="T:NHibernate.QueryException"/> class.
@@ -48671,6 +49628,14 @@
             </summary>
             <param name="entityName">The EntityName that NHibernate was trying to update in the database.</param>
             <param name="identifier">The identifier of the object that is stale.</param>
+        </member>
+        <member name="M:NHibernate.StaleObjectStateException.#ctor(System.String,System.Object,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NHibernate.StaleObjectStateException"/> class.
+            </summary>
+            <param name="entityName">The EntityName that NHibernate was trying to update in the database.</param>
+            <param name="identifier">The identifier of the object that is stale.</param>
+            <param name="innerException">The original exception having triggered this exception.</param>
         </member>
         <member name="P:NHibernate.StaleObjectStateException.EntityName">
             <summary>
@@ -49042,13 +50007,12 @@
             <returns>a CacheableResultTransformer that is used to transform
                tuples to a value(s) that can be cached.</returns>
         </member>
-        <member name="M:NHibernate.Transform.CacheableResultTransformer.Create(NHibernate.Transform.ITupleSubsetResultTransformer,System.String[],System.Boolean[])">
+        <member name="M:NHibernate.Transform.CacheableResultTransformer.Create(NHibernate.Transform.IResultTransformer,System.String[],System.Boolean[],System.Boolean,NHibernate.SqlCommand.SqlString)">
             <summary>
             Returns a CacheableResultTransformer that is used to transform
             tuples to a value(s) that can be cached.
             </summary>
-            <param name="transformer">a tuple subset result transformer;
-              must be non-null;</param>
+            <param name="transformer">result transformer that will ultimately be used (after caching results)</param>
             <param name="aliases">the aliases that correspond to the tuple;
               if it is non-null, its length must equal the number
               of true elements in includeInTuple[]</param>
@@ -49057,10 +50021,13 @@
               included in the tuple; the number of true values equals
               the length of the tuple that will be transformed;
               must be non-null</param>
+            <param name="autoDiscoverTypes">Indicates if types auto-discovery is enabled.</param>
+            <param name="autoDiscoveredQuery">If <paramref name="autoDiscoverTypes"/>, the query for which they
+            will be autodiscovered.</param>
             <returns>a CacheableResultTransformer that is used to transform
                tuples to a value(s) that can be cached.</returns>
         </member>
-        <member name="M:NHibernate.Transform.CacheableResultTransformer.Create(System.Boolean[])">
+        <member name="M:NHibernate.Transform.CacheableResultTransformer.Create(System.Boolean[],System.Boolean[])">
             <summary>
             Returns a CacheableResultTransformer that is used to transform
             tuples to a value(s) that can be cached.
@@ -49070,6 +50037,8 @@
               included in the tuple; the number of true values equals
               the length of the tuple that will be transformed;
               must be non-null</param>
+            <param name="includeInTransform">Indexes that are included in the transformation.
+            <c>null</c> if all elements in the tuple are included.</param>
             <returns>a CacheableResultTransformer that is used to transform
                tuples to a value(s) that can be cached.</returns>
         </member>
@@ -50764,6 +51733,15 @@
             </param>
             <returns>The unwrapped exception.</returns>
         </member>
+        <member name="M:NHibernate.Util.ReflectHelper.PreserveStackTrace(System.Exception)">
+            <summary>
+            Ensures an exception current stack-trace will be preserved if the exception is explicitly rethrown.
+            </summary>
+            <param name="ex">
+            The <see cref="T:System.Exception"/> which current stack-trace is to be preserved in case of explicit rethrow.
+            </param>
+            <returns>The unwrapped exception.</returns>
+        </member>
         <member name="M:NHibernate.Util.ReflectHelper.TryGetMethod(System.Type,System.Reflection.MethodInfo)">
             <summary>
             Try to find a method in a given type.
@@ -51078,7 +52056,7 @@
         </member>
         <member name="M:NHibernate.Util.StringHelper.Split(System.String,System.String)">
             <summary>
-            Just a façade for calling string.Split()
+            Just a facade for calling string.Split()
             We don't use our StringTokenizer because string.Split() is
             more efficient (but it only works when we don't want to retrieve the delimiters)
             </summary>
@@ -51167,6 +52145,13 @@
             </summary>
             <param name="qualifiedName"></param>
             <returns></returns>
+        </member>
+        <member name="M:NHibernate.Util.StringHelper.IsNotRoot(System.String,System.String@)">
+            <summary>
+            Returns true if given name is not root property name
+            </summary>
+            <param name="qualifiedName"></param>
+            <param name="root">Returns root name</param>
         </member>
         <member name="M:NHibernate.Util.StringHelper.BooleanValue(System.String)">
             <summary>

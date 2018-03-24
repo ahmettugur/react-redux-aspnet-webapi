@@ -5,10 +5,10 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - Dapper
 - NHibernate
 - Entity Framework
-- Redis Cache and Memory Cache
+- Memcached, Redis Cache and Memory Cache
 - Aspect Oriented Programming with Postsharp (4.2.17)
   - AuthorizationAspects
-  - CacheAsepcts (RedisCacheManager and MemoryCacheManager)
+  - CacheAsepcts (MemcachedManager, RedisCacheManager and MemoryCacheManager)
   - ExceptionAspects
   - LogAspects
   - ValidationAspects
@@ -18,6 +18,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 - Ninject IOC
 - AutoMapper
 - EPPlus Excel Download
+- Web Api Self Host
 
 # React Component
   - redux-from
@@ -36,6 +37,7 @@ Single page basic Online Store app; React and Redux with ASP.NET Web Api.
 
 ### Database, Postsharp and Redis Installation
 
+* Download [Memcahed](https://commaster.net/content/installing-memcached-windows) Install your computer
 * Download [Redis](https://github.com/MicrosoftArchive/redis/releases) Install your computer
 * Download [Postsahrp (4.2.17)](https://www.postsharp.net/downloads/postsharp-4.2/v4.2.17) Install your computer
 * Open SQL Server Management Studio > File > Open > File  select Store.sql and execute

@@ -278,8 +278,6 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Dapper.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Newtonsoft.Json.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\FluentNHibernate.dll
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Remotion.Linq.dll
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Remotion.Linq.EagerFetching.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Antlr3.Runtime.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Iesi.Collections.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\OnlineStore.Business.Contracts.pdb
@@ -304,10 +302,7 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\StackExchange.Redis.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Dapper.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Newtonsoft.Json.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\FluentNHibernate.pdb
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\FluentNHibernate.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Remotion.Linq.xml
-D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Remotion.Linq.EagerFetching.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Antlr3.Runtime.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Iesi.Collections.xml
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\OnlineStore.Business.pssym
@@ -316,3 +311,7 @@ D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineSt
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\obj\Debug\OnlineStore.Business.dll.postsharp
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\obj\Debug\OnlineStore.Business.dll
 D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\obj\Debug\OnlineStore.Business.pdb
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Enyim.Caching.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\Enyim.Caching.xml
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\System.ComponentModel.Annotations.dll
+D:\GithubProjectExample\ReactAndReduxWithAspNetWebApi\OnlineStoreWebApi\OnlineStore.Business\bin\Debug\System.ComponentModel.Primitives.dll

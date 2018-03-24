@@ -57,18 +57,18 @@ namespace OnlineStore.Core.CrossCuttingConcerns.Caching.Redis
             _redisDb.KeyDelete(key);
         }
 
-        public void RemoveByPattern(string pattern)
-        {
-            var endpoints = _redisDb.Multiplexer.GetEndPoints(true);
-            foreach (var endpoint in endpoints)
-            {
-                var keys = _redisDb.Multiplexer.GetServer(endpoint).Keys(pattern: pattern);
+        //public void RemoveByPattern(string pattern)
+        //{
+        //    var endpoints = _redisDb.Multiplexer.GetEndPoints(true);
+        //    foreach (var endpoint in endpoints)
+        //    {
+        //        var keys = _redisDb.Multiplexer.GetServer(endpoint).Keys(pattern: pattern);
 
-                foreach (var key in keys)
-                {
-                    Remove(key);
-                }
-            }
-        }
+        //        foreach (var key in keys)
+        //        {
+        //            Remove(key);
+        //        }
+        //    }
+        //}
     }
 }

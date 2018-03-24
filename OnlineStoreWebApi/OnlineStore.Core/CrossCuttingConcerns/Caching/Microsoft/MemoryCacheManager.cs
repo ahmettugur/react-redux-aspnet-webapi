@@ -53,15 +53,15 @@ namespace OnlineStore.Core.CrossCuttingConcerns.Caching.Microsoft
             _cache.Remove(key);
         }
 
-        public void RemoveByPattern(string pattern)
-        {
-            var regexp = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            var cacheToRemove = _cache.Where(_ => regexp.IsMatch(_.Key)).Select(_ => _.Key).ToList();
+        //public void RemoveByPattern(string pattern)
+        //{
+        //    var regexp = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        //    var cacheToRemove = _cache.Where(_ => regexp.IsMatch(_.Key)).Select(_ => _.Key).ToList();
 
-            foreach (var key in cacheToRemove)
-            {
-                Remove(key);
-            }
-        }
+        //    foreach (var key in cacheToRemove)
+        //    {
+        //        Remove(key);
+        //    }
+        //}
     }
 }

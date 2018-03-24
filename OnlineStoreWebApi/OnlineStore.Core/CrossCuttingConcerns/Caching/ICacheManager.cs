@@ -11,7 +11,7 @@ namespace OnlineStore.Core.CrossCuttingConcerns.Caching
         T Get<T>(string key);
         void Add(string key, object data, int expireAsMinute);
         void Remove(string key);
-        void RemoveByPattern(string pattern);
+        //void RemoveByPattern(string pattern);
         bool IsExist(string key);
         void Clear();
     }

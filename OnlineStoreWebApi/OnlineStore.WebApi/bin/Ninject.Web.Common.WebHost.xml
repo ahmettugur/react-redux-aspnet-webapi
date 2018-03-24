@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ninject.Web.Common.WebHost</name>
+    </assembly>
+    <members>
+        <member name="T:Ninject.Web.Common.HttpApplicationInitializationHttpModule">
+            <summary>
+            Initializes a <see cref="T:System.Web.HttpApplication"/> instance
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.HttpApplicationInitializationHttpModule.#ctor(System.Func{Ninject.IKernel})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ninject.Web.Common.HttpApplicationInitializationHttpModule"/> class.
+            </summary>
+            <param name="lazyKernel">The kernel retriever.</param>
+        </member>
+        <member name="M:Ninject.Web.Common.HttpApplicationInitializationHttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes a module and prepares it to handle requests.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication"/> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="T:Ninject.Web.Common.WebHost.NinjectHttpApplication">
+            <summary>
+            Base implementation of <see cref="T:System.Web.HttpApplication"/> that adds injection support.
+            </summary>
+        </member>
+        <member name="F:Ninject.Web.Common.WebHost.NinjectHttpApplication.onePerRequestHttpModule">
+            <summary>
+            The one per request module to release request scope at the end of the request
+            </summary>
+        </member>
+        <member name="F:Ninject.Web.Common.WebHost.NinjectHttpApplication.bootstrapper">
+            <summary>
+            The bootstrapper that starts the application.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ninject.Web.Common.WebHost.NinjectHttpApplication"/> class.
+            </summary>
+        </member>
+        <member name="P:Ninject.Web.Common.WebHost.NinjectHttpApplication.Kernel">
+            <summary>
+            Gets the kernel.
+            </summary>
+            <value>The kernel.</value>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.Init">
+            <summary>
+            Executes custom initialization code after all event handler modules have been added.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.Application_Start">
+            <summary>
+            Starts the application.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.Application_End">
+            <summary>
+            Releases the kernel on application end.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.CreateKernel">
+            <summary>
+            Creates the kernel that will manage your application.
+            </summary>
+            <returns>The created kernel.</returns>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.OnApplicationStarted">
+            <summary>
+            Called when the application is started.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpApplication.OnApplicationStopped">
+            <summary>
+            Called when the application is stopped.
+            </summary>
+        </member>
+        <member name="T:Ninject.Web.Common.WebHost.NinjectHttpModule">
+            <summary>
+            HttpModule to add support for constructor injection to HttpModules
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes a module and prepares it to handle requests.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication"/> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.NinjectHttpModule.Dispose">
+            <summary>
+            Disposes of the resources (other than memory) used by the module that implements <see cref="T:System.Web.IHttpModule"/>.
+            </summary>
+        </member>
+        <member name="T:Ninject.Web.Common.WebHost.OnePerRequestHttpModule">
+            <summary>
+            Provides callbacks to more aggressively collect objects scoped to HTTP requests.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.OnePerRequestHttpModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Ninject.Web.Common.WebHost.OnePerRequestHttpModule"/> class.
+            </summary>
+        </member>
+        <member name="P:Ninject.Web.Common.WebHost.OnePerRequestHttpModule.ReleaseScopeAtRequestEnd">
+            <summary>
+            Gets or sets a value indicating whether the request scope shall be released immediately after the request has ended.
+            </summary>
+            <value>
+                <c>true</c> if the request scope shall be released immediately after the request has ended.; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.OnePerRequestHttpModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes the module.
+            </summary>
+            <param name="application">The <see cref="T:System.Web.HttpApplication"/> whose instances will be managed.</param>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.OnePerRequestHttpModule.Dispose">
+            <summary>
+            Disposes of the resources (other than memory) used by the module that implements <see cref="T:System.Web.IHttpModule"/>.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.OnePerRequestHttpModule.DeactivateInstancesForCurrentHttpRequest">
+            <summary>
+            Deactivates instances owned by the current <see cref="T:System.Web.HttpContext"/>.
+            </summary>
+        </member>
+        <member name="T:Ninject.Web.Common.WebHost.WebHostNinjectModule">
+            <summary>
+            Defines the bindings that are common for all ASP.NET web extensions.
+            </summary>
+        </member>
+        <member name="M:Ninject.Web.Common.WebHost.WebHostNinjectModule.Load">
+            <summary>
+            Loads the module into the kernel.
+            </summary>
+        </member>
+    </members>
+</doc>

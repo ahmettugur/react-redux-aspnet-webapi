@@ -19,6 +19,7 @@ using OnlineStore.Core.CrossCuttingConcerns.Aspects.Postsharp.AuthorizationAspec
 using AutoMapper;
 using OnlineStore.Entity.ComplexType;
 using OnlineStore.Core.CrossCuttingConcerns.Caching.Redis;
+using OnlineStore.Core.CrossCuttingConcerns.Caching.Memcached;
 
 namespace OnlineStore.Business.Services
 {
@@ -60,6 +61,7 @@ namespace OnlineStore.Business.Services
 
         //[CacheAspect(typeof(MemoryCacheManager))]
         //[CacheAspect(typeof(RedisCacheManager), 60, typeof(Product))]
+        [CacheAspect(typeof(MemcachedManager), 60, typeof(Product))]
         [MethodWorkingTimeAspect(2)]
         public List<Product> GetAll(Expression<Func<Product, bool>> predicate = null)
         {
